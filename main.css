@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+:root {
+    --primary-font: 'Roboto Mono';
+    --secondary-font: 'Poppins';
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #000428, #004e92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    position: absolute;
+    width: 450px;
+    height: 550px;
+    background-color: white;
+    border-radius:10px;
+}
+.title {
+    width: 100%;
+    height: 12%;
+    /* background-color: beige; */
+    text-align: center;
+}
+.title h1 {
+    position: relative;
+    top: 10px;
+    font-family: var(--secondary-font);
+}
+.btns {
+    width: 300px;
+    /* background-color: blueviolet; */
+    height: 10%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.btns button{
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: var(--secondary-font);
+}
+.form {
+    width: 100%;
+    height: 60%;
+    /* background-color: brown; */
+}
+.form input {
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: 1px solid gray;
+    margin-top: 25px;
+    margin-left: 50px;
+    position: relative;
+    top: 2em;
+}
+.form input[type = "email"],[type= "password"]{
+    padding-left: 20px;
+    font-family: var(--secondary-font);
+}
+.btn-Sign-Up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-Sign-Up button{
+    width: 60%;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 19px;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.loaded-sign {
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    color: white;
+}
+.login-loaded-btn {
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    color: white;
+}
+
+#login-btn {
+    position: absolute;
+    top: 75%;
+}
+#SignUp-btn {
+    position: absolute;
+    top: 75%;
+}
+.pswForgeted {
+    margin-top: 30px;
+}
+.pswForgeted a {
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 50px;
+    font-family: var(--secondary-font);
+    color: blue;
+}
+.btn-Sign-Up h3{
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.btn-Sign-Up a {
+    text-decoration: none;
+    color: blue;
+}
+.wrapper i {
+    position: absolute;
+    top: 38%;
+    left: 83%;
+    font-size: 20px;
+}
+#errorText {
+    position: absolute;
+    top: 38%;
+    left: 60%;
+    animation: backInRight;
+    animation-duration: 2s;
+    color: #FF1700;
+    font-family: var(--secondary-font);
+}
+#hideTextError {
+    cursor: pointer;
+}
+#loginEmail.active {
+    border: 1px solid #FF1700;
+    animation: shakeX;
+    animation-duration: 2s;
+}
+#pswLogin.active {
+    border: 1px solid #FF1700;
+    animation: shakeX;
+    animation-duration: 2s;
+}
+#SignupEmail.active {
+    border: 1px solid #FF1700;
+    animation: shakeX;
+    animation-duration: 2s;
+}
+#passwordSign.active, #passwordSign1.active {
+    border: 1px solid #FF1700;
+    animation: shakeX;
+    animation-duration: 2s;
+}
+
