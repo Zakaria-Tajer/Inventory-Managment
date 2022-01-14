@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Helvetica;
+    src: url(/font/Helvetica.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+:root {
+    --primary-font: 'Roboto Mono';
+    --secondary-font: 'Poppins';
+    --name-font: 'Helvetica';
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.products-container {
+    width: 84%;
+    height: 92%;
+    /* background-color: tomato; */
+    position: absolute;
+    right: 0;
+}
+.table-content {
+    position: absolute;
+    top: 5%;
+    width: 95%;
+}
+
+.container-table   {
+    padding-right: 50px;
+    position: relative;
+} 
+.table-content h1 {
+    margin-left: 20px;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+}

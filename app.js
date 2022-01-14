@@ -78,3 +78,23 @@ SignUp_btn.addEventListener('click',()=> {
         animate(passwordSign,passwordSign1)
     }
 })
+
+const dashboard = document.getElementById('dashboard')
+const products = document.getElementById('products')
+const messages = document.getElementById('messages')
+const manageEmployees = document.getElementById('manage-employee')
+
+
+
+dashboard.onclick = ()=> {
+    location.assign('./admin-pages/dashboard.php')
+}
+products.onclick = ()=> {
+    location.assign('./admin-products/products.php')
+}
+messages.onclick = ()=> {
+    location.assign('../admin-pages/messages/message.php')
+}
+manageEmployees.onclick = ()=> {
+    location.assign('../admin-pages/admin-manage/manage.php')
+}

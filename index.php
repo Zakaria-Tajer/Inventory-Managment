@@ -53,7 +53,7 @@
 
 
 
-    <script src="./index.js"></script>
+    <script src="./app.js"></script>
     <script src="https://kit.fontawesome.com/99026984ca.js" crossorigin="anonymous"></script>
 </body>
 </html>

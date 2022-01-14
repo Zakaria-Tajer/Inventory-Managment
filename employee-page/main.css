@@ -1,0 +1,104 @@
+@font-face {
+    font-family: Helvetica;
+    src: url(../font/Helvetica.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 84.5%;
+    height: 100vh;
+    background-color: aquamarine;
+    margin-left: auto;
+    right: 0;
+}
+.container h1 {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: var(--secondary-font);
+}
+.wrapper {
+    width: 55%;
+    height: 300px;
+    background-color: white;
+    margin-left: 30px;
+    margin-top: 5%;
+    display: flex;
+}
+.img-container {
+    width: 300px;
+    height: 300px;
+    background-color: wheat;
+}
+.info-product {
+    width: 400px;
+    height: 300px;
+    background-color: tomato;
+    margin-left: 20px;
+}
+
+
+.lining {
+    position: relative;
+    width: 15px;
+    height: 3px;
+    background-color: white;
+    transform: rotate(45deg);
+    top: 0;
+}
+.lining::before {
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    background-color: white;
+    top: 0;
+    transform: rotate(-90deg);
+    content: '';
+}
+.info-product h1{
+    margin-left: 30px;
+    margin-top: 20px;
+    font-family: "Helvetica";
+    font-weight: 500;
+    font-size: 26px;
+}
+.info-product h3 {
+    margin-left: 30px;
+    /* font-family: var(--font-name); */
+}
+
+.color-container {
+    display: flex;
+}
+.color {
+    width: 50px;
+    height: 30px;
+    background-color: thistle;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btns {
+    display: flex;
+    flex-direction:column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btns button{
+    width: 120px;
+    /* display: flex; */
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+    color: white;
+    font-family: var(--name-font)
+}
