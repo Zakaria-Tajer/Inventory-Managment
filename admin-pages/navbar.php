@@ -41,7 +41,7 @@
                     <i class='bx bx-grid-alt'></i>
                     <a href="#" id="dashboard">Dashboard</a>
                 </li>
-                <li>
+                <li id="hide">
                     <i class="fas fa-cubes"></i>
                     <a href="../admin-pages/admin-products/products.php" id="products">Products</a>
                 </li>
@@ -49,7 +49,7 @@
                     <i class="fas fa-envelope"></i>
                     <a href="../admin-pages/messages/message.php" id="messages">Messages</a>
                 </li>
-                <li>
+                <li id="hide">
                     <i class="fas fa-users-cog"></i>
                     <a href="/admin-pages/admin-manage/manage.php" id="manage-employee">Manage Employee</a>
                 </li>

@@ -10,36 +10,41 @@
 
 .container {
     width: 84.5%;
-    height: 100vh;
-    background-color: aquamarine;
+    height: 150vh;
+    /* background-color: aquamarine; */
     margin-left: auto;
     right: 0;
+    /* display: flex; */
 }
 .container h1 {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 30px;
-    font-family: var(--secondary-font);
+    font-family: var(--name-font);
+    position: relative;
 }
 .wrapper {
-    width: 55%;
+    width: 58%;
     height: 300px;
     background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin-left: 30px;
-    margin-top: 5%;
+    margin-top: 2%;
     display: flex;
 }
 .img-container {
     width: 300px;
     height: 300px;
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 .info-product {
     width: 400px;
     height: 300px;
-    background-color: tomato;
+    /* background-color: tomato; */
     margin-left: 20px;
 }
-
+#hide {
+    display: none;
+}
 
 .lining {
     position: relative;
@@ -84,12 +89,16 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.wrapper.active {
+    width: 80%;
+}
 
 .btns {
     display: flex;
     flex-direction:column;
-    margin-left: auto;
-    margin-right: auto;
+    width: 200px;
+    height: 300px;
+    /* background-color: teal; */
 }
 .btns button{
     width: 120px;
@@ -100,5 +109,64 @@
     border: none;
     outline:none;
     color: white;
-    font-family: var(--name-font)
+    font-family: var(--name-font);
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.interactionsBtns {
+    width: 400px;
+    height: 300px;
+    /* background-color: blueviolet; */
+    display: none;
+}
+.interactionsBtns.active {
+    display: block;
+}
+.btn-type {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.btn-type button {
+    margin-left: 5px;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.interactionsBtns input {
+    margin-left: 3em;
+    width: 300px;
+    margin-top: 2em;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #f1f1f1;
+}
+.interactionsBtns input[type = 'text']{
+    padding-left: 20px;
+}
+#added {
+    display: none;
+}
+#removed {
+    display: none;
+}
+#modified {
+    display: none;
+}
+
+#added.active {
+    display: block;
+}
+#removed.active {
+    display: block;
+}
+#modified.active {
+    display: block;
 }
