@@ -18,12 +18,7 @@
                     <h3>Admin</h3>
                 </div>
             </div>
-            <div class="hidden" id="hidden">
-                <div class="close-icon" id="close-icon"></div>
-                <div class="search-field">
-                <input type="search" placeholder="Search...">
-                <i class="fas fa-search"></i>
-            </div>
+            
             <!-- <div class="user-admin">
                 <div class="user-circle">
                     <img src="#">
@@ -35,10 +30,10 @@
             </div> -->
             </div>
         </nav>
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar-showed">
             <ul>
                 <li>
-                    <i class='bx bx-grid-alt'></i>
+                    <i class='bx bx-grid-alt' id="dashboard-icon"></i>
                     <a href="#" id="dashboard">Dashboard</a>
                 </li>
                 <li id="hide">

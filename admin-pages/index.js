@@ -1,16 +1,12 @@
-const sidebarMobile = document.getElementById('hidden')
-const close_icon = document.getElementById('close-icon')
-const menu_icon = document.getElementById('menu-icon')
+const menu = document.getElementById('menu-bars')
+const sidebar_showed = document.getElementById('sidebar-showed')
 
-
-close_icon.addEventListener('click', ()=> {
-    console.log(1);
-    sidebarMobile.classList.toggle('active')
+menu.addEventListener('click', ()=> {
+    sidebar_showed.classList.toggle('active')
 })
 
-menu_icon.addEventListener('click', ()=> {
-    sidebarMobile.classList.toggle('active')
-})
+
+
 
 const logout = document.getElementById('logout')
 
@@ -23,15 +19,16 @@ const products = document.getElementById('products')
 const messages = document.getElementById('messages')
 const manageEmployees = document.getElementById('manage-employee')
 
-dashboard.onclick() = ()=> {
+dashboard.onclick = ()=> {
     location.assign('./admin-pages/dashboard.php')
 }
-products.onclick() = ()=> {
+products.onclick = ()=> {
     location.assign('./admin-pages/admin-products/products.php')
 }
-messages.onclick() = ()=> {
+messages.onclick = ()=> {
     location.assign('/messages/message.php')
 }
-manageEmployees.onclick() = ()=> {
+manageEmployees.onclick = ()=> {
     location.assign('/admin-manage/manage.php')
 }
+

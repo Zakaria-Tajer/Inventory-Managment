@@ -11,9 +11,12 @@
     <main class="hero">
         <?php
             include 'navbar.php';
-        ?>
+            ?>
+            <div>
+                <i class="fas fa-bars" id="menu-bars"></i>
+            </div>
         <section class="content">
-            <h1>Dashboard</h1>
+            <h1 class="dash-board">Dashboard</h1>
             <div class="boxs-container">
                 <div class="box">
                     <h2>Total Employees</h2>
@@ -44,9 +47,12 @@
                 </div>
                 </div>
             </div>
+
             <div class="table-container">
-                <div class="table-content">
+                <div class="title-action">
                     <h1>List of Actions</h1>
+                </div>
+                <div class="table-content">
                     <table class="container-table">
                         <thead>
                         <tr>
@@ -108,29 +114,31 @@
                     </table>
                 </div>
                 <div class="employee-content">
-                    <h1>Recent Employees</h1>
+                    <div class="title-employee">
+                        <h1>Recent Employees</h1>
+                    </div>
                     <div class="employee-list">
                         <div class="info-container">
                             <div class="circle-emp">
-                                <img src="#" alt="">
+                                <img src="#" >
                             </div>
                             <h1>Employe Name</h1>
                         </div>
                         <div class="info-container">
                             <div class="circle-emp">
-                                <img src="#" alt="">
+                                <img src="#" >
                             </div>
                             <h1>Employe Name</h1>
                         </div>
                         <div class="info-container">
                             <div class="circle-emp">
-                                <img src="#" alt="">
+                                <img src="#" >
                             </div>
                             <h1>Employe Name</h1>
                         </div>
                         <div class="info-container">
                             <div class="circle-emp">
-                                <img src="#" alt="">
+                                <img src="#">
                             </div>
                             <h1>Employe Name</h1>
                         </div>
