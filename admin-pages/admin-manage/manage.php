@@ -12,10 +12,14 @@
     <?php
         include('../navbar.php');
     ?>
+    <div>
+        <i class="fas fa-bars" id="menu-bars"></i>
+    </div>
+    <div class="manag-list">
+        <h1>List of Actions</h1>
+    </div>
     <div class="list-container">
-
-    <div class="table-content">
-            <h1>List of Actions</h1>
+        <div class="table-content">
             <table class="container-table">
                 <thead>
                     <tr>

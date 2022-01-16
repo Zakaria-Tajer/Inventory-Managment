@@ -376,7 +376,6 @@
 
 
 @media only screen and (max-width : 480px) {
-
     .hero {
         width: 480px;
         height: 200vh;
@@ -393,7 +392,7 @@
     .search-field input{
         width: 200px;
         flex: 0;
-        /* margin-left: 20px; */
+        margin-left: 20px;
     }
     .search-field input[type = 'search']{
         padding-left: 0px;
@@ -569,7 +568,7 @@
         position: relative;
     }
     .table-container {
-        top: 100%;
+        top: 130%;
         position: absolute;
         left: -20%;
     }

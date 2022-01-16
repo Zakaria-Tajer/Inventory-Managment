@@ -12,10 +12,15 @@
     <?php
         include('../admin-pages/navbar.php');
     ?>
+        <div>
+            <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
     <div class="container">
-        <h1>Product Managing</h1>
+        <div class="managing">
+            <h1>Product Managing</h1>
+        </div>
         <div class="wrapper" id="wrapper">
-            <div class="img-container">
+            <div class="img-container" id="img">
                 <img src="#">
             </div>
             <div class="info-product">
