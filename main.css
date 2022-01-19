@@ -21,7 +21,7 @@
 .wrapper {
     position: absolute;
     width: 450px;
-    height: 550px;
+    height: 600px;
     background-color: white;
     border-radius:10px;
 }
@@ -64,6 +64,26 @@
     height: 60%;
     /* background-color: brown; */
 }
+.errorText {
+    position: relative;
+    width: 80%;
+    height: 60px;
+    background-color: #F8D7DB;
+    margin-left: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.errorText h1 {
+    font-size: 14px;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+}
 .form input {
     width: 350px;
     height: 50px;
@@ -73,8 +93,9 @@
     margin-top: 25px;
     margin-left: 50px;
     position: relative;
-    top: 2em;
+    top: 1em;
 }
+
 .form input[type = "email"],[type= "password"]{
     padding-left: 20px;
     font-family: var(--secondary-font);
@@ -92,12 +113,17 @@
     border: none;
     outline: none;
     color: white;
+    margin-top: 20px;
     border-radius: 10px;
     font-size: 19px;
     background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
-
+#img-up {
+    padding-left: 10px;
+    margin-top: 20px;
+    outline: none;
+}
 .loaded-sign {
     background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
@@ -115,7 +141,7 @@
 }
 #SignUp-btn {
     position: absolute;
-    top: 75%;
+    top: 85%;
 }
 .pswForgeted {
     margin-top: 30px;
@@ -143,15 +169,7 @@
     left: 83%;
     font-size: 20px;
 }
-#errorText {
-    position: absolute;
-    top: 38%;
-    left: 60%;
-    animation: backInRight;
-    animation-duration: 2s;
-    color: #FF1700;
-    font-family: var(--secondary-font);
-}
+
 #hideTextError {
     cursor: pointer;
 }

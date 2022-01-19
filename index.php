@@ -18,14 +18,19 @@
                 <button id="login">Login</button>
                 <button id="SignUps">Sign Up</button>
             </div>
-            <div class="form">
-                <input type="email" placeholder="Email" id="SignupEmail" required>
-                <input type="password" placeholder="password" id="passwordSign" required>
-                <input type="password" placeholder="Confirm password" id="passwordSign1" required>
+            <div class="errorText" id="errorText">
+                <h1 id="ErrorText">d</h1>
             </div>
-            <div class="btn-Sign-Up">
-                <button id="SignUp-btn">Sign Up</button>
-            </div>
+            <form class="form"  id="form" enctype="multipart/form-data">
+                <input type="email" name="Email" placeholder="Email" id="SignupEmail" required>
+                <input type="password" name="Password_ver"  placeholder="password" id="passwordSign" required>
+                <input type="password" name="Password_mat"  placeholder="Confirm password" id="passwordSign1" required>
+                <input type="file" name="img"  accept="image" id="img-up">
+                <!-- <label for="">Select iamge</label> -->
+                <div class="btn-Sign-Up">
+                    <button id="SignUp-btn" type="submit" name="submit">Sign Up</button>
+                </div>
+            </form>
         </div>
         <!-- ////// -->
         <div class="wrapper" id="login-wrapper">
@@ -36,24 +41,27 @@
                 <button id="login-loaded">Login</button>
                 <button id="Sign">Sign Up</button>
             </div>
-            <div class="form">
-                <input type="email" id="loginEmail" class="animate__animated" placeholder="Email" required>
-                <span class="animate__animated" id="errorText"></span>
-                <input type="password" id="pswLogin" class="animate__animated" placeholder="password" required>
+            <form class="form" action="./signupValidation/php/login.php" method="POST" id="formd">
+                <input type="email" name="loginEmail" id="loginEmail"  placeholder="Email" required>
+                <!-- <span class="animate__animated" id="errorText"></span> -->
+                <input type="password" name="loginPassword" id="pswLogin" placeholder="password" required>
                 <div class="pswForgeted">
                     <a href="#">Forget password?</a>
                 </div>
-            </div>
-            <div class="btn-Sign-Up">
-                <button id="login-btn">Login</button>
-                <h3>Not a Member? <a href="#" id="link">Signup now</a></h3>
-            </div>
+                <div class="btn-Sign-Up">
+                    <button type="submit" id="login-btn">Login</button>
+                    <h3>Not a Member? <a href="#" id="link">Signup now</a></h3>
+        
+                </div>
+            </form>
         </div>
     </div>
 
 
 
     <script src="./app.js"></script>
+    <script src="./signupValidation/js/signup.js"></script>
+    <script src="./signupValidation/js/login.js"></script>
     <script src="https://kit.fontawesome.com/99026984ca.js" crossorigin="anonymous"></script>
 </body>
 </html>

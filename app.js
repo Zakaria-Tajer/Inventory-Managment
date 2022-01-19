@@ -1,9 +1,39 @@
 const Signwrapper2 = document.getElementById('Sign')
 const login = document.getElementById('login')
 const link = document.getElementById('link')
+const form = document.getElementById('form')
 
+
+form.addEventListener('submit', (e)=> {
+    e.preventDefault()
+})
 const login_btn = document.getElementById('login-btn')
 const SignUp_btn = document.getElementById('SignUp-btn')
+
+
+
+const errorText = document.getElementById('errorText')
+const ErrorHandler = document.getElementById('ErrorText')
+
+
+SignUp_btn.addEventListener('click', ()=> {
+    const req = new XMLHttpRequest()
+    req.onreadystatechange = ()=> {
+        if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+            let data = req.responseText
+            console.log(data);
+            if(data == "Success"){
+                console.log('i');
+            }else {
+                ErrorHandler.textContent = data
+                errorText.style.display = 'block'
+            }
+        }
+    }
+    req.open('POST', './signupValidation/php/signup.php', true)
+    let formData = new FormData(form)
+    req.send(formData)
+})
 
 // loadedElement
 const Sign = document.getElementById('SignUps')
@@ -20,7 +50,7 @@ const passwordSign = document.getElementById('passwordSign')
 const passwordSign1 = document.getElementById('passwordSign1')
 
 
-const errorText = document.getElementById('errorText')
+// const errorText = document.getElementById('errorText')
 const hideTextError = document.getElementById('hideTextError')
 
 
@@ -34,6 +64,8 @@ login.addEventListener('click', ()=> {
     sign_wrapper.style.display = 'none'    
 })
 
+
+
 Signwrapper2.addEventListener('click', ()=> {
     login_wrapper.style.display = 'none'
     sign_wrapper.style.display = 'block'
@@ -44,40 +76,8 @@ link.addEventListener('click', ()=> {
     sign_wrapper.style.display = 'block'
 })
 
-function animate(email){
-    email.style.border = '1px solid #66DE93'
-    email.style.animation = 'shakeX'
-    email.style.animationDuration = '2s'
-}
-const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-login_btn.addEventListener('click', ()=> {
-    if(loginEmail.value.match(regexEmail)){
-        console.log('valid');
-        animate(loginEmail)
-    }else {
-        loginEmail.classList.toggle('active')
-        console.log('invalid');
-    }
-    if(pswLogin.value === ''){
-        pswLogin.classList.toggle('active')
-    }
-})
 
-SignUp_btn.addEventListener('click',()=> {
-    if(SignupEmail.value.match(regexEmail)){
-        animate(SignupEmail)
-    }else {
-        SignupEmail.classList.toggle('active')
-        console.log('invalid');
-    }
 
-    if(passwordSign.value === '' && passwordSign1.value === ''){
-        passwordSign.classList.toggle('active')
-        passwordSign1.classList.toggle('active')
-    }else {
-        animate(passwordSign,passwordSign1)
-    }
-})
 
 const dashboard = document.getElementById('dashboard')
 const products = document.getElementById('products')
@@ -86,15 +86,18 @@ const manageEmployees = document.getElementById('manage-employee')
 
 
 
-dashboard.onclick = ()=> {
-    location.assign('./admin-pages/dashboard.php')
-}
-products.onclick = ()=> {
-    location.assign('./admin-products/products.php')
-}
-messages.onclick = ()=> {
-    location.assign('../admin-pages/messages/message.php')
-}
-manageEmployees.onclick = ()=> {
-    location.assign('../admin-pages/admin-manage/manage.php')
-}
+// dashboard.onclick = ()=> {
+//     location.assign('./admin-pages/dashboard.php')
+// }
+// products.onclick = ()=> {
+//     location.assign('./admin-products/products.php')
+// }
+// messages.onclick = ()=> {
+//     location.assign('../admin-pages/messages/message.php')
+// }
+// manageEmployees.onclick = ()=> {
+//     location.assign('../admin-pages/admin-manage/manage.php')
+// }
+
+
+
