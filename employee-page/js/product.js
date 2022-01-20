@@ -1,5 +1,5 @@
 const form = document.getElementById('interaction')
-const rm_btn = document.getElementById('removed')
+const modified_btn = document.getElementById('modified')
 
 form.addEventListener('submit', (e)=> {
     e.preventDefault()
@@ -9,8 +9,14 @@ form.addEventListener('submit', (e)=> {
 const container = document.getElementById('container')
 // const wrapper = document.getElementsByClassName('')
 
+
+
 /////created ELements
 
+
+
+function addWarppers(){
+    
 const wrapperAll = document.createElement('div')
 const img_container = document.createElement('div')
 const product_info = document.createElement('div')
@@ -22,16 +28,24 @@ const img_created = document.createElement('img')
 
 container.classList.add('container')
 wrapperAll.classList.add('wrapperAll')
+// wrapperAll.classList.toggle('active')
 img_container.classList.add('img_container')
 product_info.classList.add('product_info')
 color_container.classList.add('color_container')
 buttons.classList.add('buttons')
+
 img_created.src = '/';
 remove_btn.textContent = 'Remove'
 modifier_btn.textContent = 'Modifier'
 
 remove_btn.classList.add('rm')
+remove_btn.style.backgroundColor = '#D9534F'
 modifier_btn.classList.add('rm')
+modifier_btn.classList.add('modi')
+
+// modifier_btn.classList.toggle('active')
+modifier_btn.classList.toggle('active')
+modifier_btn.style.backgroundColor = '#f4c430'
 /////section 2
 
 const pr_name = document.createElement('h1')
@@ -58,12 +72,36 @@ colors3.classList.add('colors')
 
 color_boxes.classList.add('color_boxes')
 pr_name.textContent = 'Product Name'
+
 pr_id.textContent = '#Product Id'
 pr_price.textContent = 'Product Price'
 pr_color.textContent = 'Product Color:'
 
 
-function addWarppers(){
+/////input
+const productNameInput = document.createElement('input')
+const productIdInput = document.createElement('input')
+const productPriceInput = document.createElement('input')
+const btnInput = document.createElement('button')
+
+productNameInput.classList.add('btns-interaction')
+productIdInput.classList.add('btns-interaction')
+productPriceInput.classList.add('btns-interaction')
+btnInput.classList.add('modifier_btn')
+btnInput.textContent = 'Modifier Product'
+productNameInput.setAttribute('placeholder','Product Name')
+productIdInput.setAttribute('placeholder','Product id')
+productPriceInput.setAttribute('placeholder','product Price')
+btnInput.classList.toggle('active')
+
+productNameInput.classList.toggle('active')
+productIdInput.classList.toggle('active')
+productPriceInput.classList.toggle('active')
+
+modifier_btn.onclick = ()=> {
+    wrapperAll.classList.toggle('active')
+    buttons.classList.toggle('active')
+}
    container.appendChild(wrapperAll)
    wrapperAll.appendChild(img_container)
    img_container.appendChild(img_created)
@@ -86,17 +124,20 @@ function addWarppers(){
    color_boxes.appendChild(colors2)
    color_boxes.appendChild(colors3)
 
-
+    buttons.appendChild(productNameInput)
+    buttons.appendChild(productIdInput)
+    buttons.appendChild(productPriceInput)
+    buttons.appendChild(btnInput)
 }
 
-rm_btn.addEventListener('click', ()=> {
-    addWarppers()
+modified_btn.addEventListener('click', ()=> {
     const req = new XMLHttpRequest()
     req.onreadystatechange = ()=> {
         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
             let data = req.responseText
             console.log(data);
             if(data == "sucess"){
+                addWarppers()
                 
             // }else {
             //     ErrorHandler.textContent = data

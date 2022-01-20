@@ -29,12 +29,12 @@ for (let i = 0; i < wrapper.length; i++) {
     //     interaction[i].classList.toggle('active')
     //     added[i].classList.toggle('active')
     // })
-    removeProduct[i].addEventListener('click', ()=> {
-        img.classList.toggle('active')
-        wrapper[i].classList.toggle('active')
-        interaction[i].classList.toggle('active')
-        removed[i].classList.toggle('active')
-    })
+    // removeProduct[i].addEventListener('click', ()=> {
+    //     img.classList.toggle('active')
+    //     wrapper[i].classList.toggle('active')
+    //     interaction[i].classList.toggle('active')
+    //     removed[i].classList.toggle('active')
+    // })
     modifierProduct[i].addEventListener('click', ()=> {
         img.classList.toggle('active')
         wrapper[i].classList.toggle('active')

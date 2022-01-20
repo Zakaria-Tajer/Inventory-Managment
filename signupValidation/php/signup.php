@@ -15,7 +15,6 @@ include_once('./connection.php');
 
         if(filter_var($Email, FILTER_VALIDATE_EMAIL)){
             $sql = mysqli_query($conn,"SELECT email FROM `user-registers` WHERE email = '{$Email}'");
-
             if(mysqli_num_rows($sql) > 0){
                 echo "$Email- This email already exist!";
             }else {

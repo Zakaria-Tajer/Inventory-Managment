@@ -38,7 +38,6 @@
                 </div>
             </div>
             <div class="btns">
-                <!-- <button style="background-color: #357EBD;" id="addProduct">Add</button> -->
                 <button style="background-color: #D9534F;" id="removeProduct">Remove</button>
                 <button style="background-color: #f4c430" id="modifierProduct">Reduction</button>
             </div>
