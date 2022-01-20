@@ -26,7 +26,7 @@
     width: 58%;
     height: 300px;
     background-color: red;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-left: 30px;
     margin-top: 2%;
     display: flex;
@@ -96,6 +96,8 @@
 .btns {
     display: flex;
     flex-direction:column;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 300px;
     /* background-color: teal; */
@@ -170,6 +172,84 @@
 #modified.active {
     display: block;
 }
+
+.wrapperAll {
+    width: 82%;
+    background-color: tomato;
+    height: 300px;
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+}
+.img_container {
+    width: 300px;
+    height: 300px;
+    background-color: wheat;
+}
+.product_info {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    margin-left: 10px;
+}
+.color_container {
+    width: 195px;
+    height: 300px;
+    background-color: teal;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+}
+.rm{
+    width: 120px;
+    /* display: flex; */
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+    color: white;
+    font-family: var(--name-font);
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.buttons {
+    width: 400px;
+    height: 300px;
+    background-color: yellow;
+}
+.color_boxes {
+    display: flex;
+}
+.text h1{
+    margin-left: 30px;
+    margin-top: 20px;
+    font-family: "Helvetica";
+    font-weight: 500;
+    font-size: 26px;
+
+}
+.text h3{
+    margin-left: 30px;
+   
+
+}
+.colors {
+    width: 50px;
+    height: 30px;
+    background-color: thistle;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
 
 @media only screen and (max-width: 480px){
     .logo {

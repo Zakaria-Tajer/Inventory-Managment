@@ -23,12 +23,12 @@ menu.addEventListener('click', ()=> {
 
 
 for (let i = 0; i < wrapper.length; i++) {
-    addProduct[i].addEventListener('click', ()=> {
-        img.classList.toggle('active')
-        wrapper[i].classList.toggle('active')
-        interaction[i].classList.toggle('active')
-        added[i].classList.toggle('active')
-    })
+    // addProduct[i].addEventListener('click', ()=> {
+    //     img.classList.toggle('active')
+    //     wrapper[i].classList.toggle('active')
+    //     interaction[i].classList.toggle('active')
+    //     added[i].classList.toggle('active')
+    // })
     removeProduct[i].addEventListener('click', ()=> {
         img.classList.toggle('active')
         wrapper[i].classList.toggle('active')

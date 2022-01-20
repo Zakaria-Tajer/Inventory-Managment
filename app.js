@@ -26,7 +26,7 @@ SignUp_btn.addEventListener('click', ()=> {
                 console.log('i');
             }else {
                 ErrorHandler.textContent = data
-                errorText.style.display = 'block'
+                errorText.style.display = 'flex'
             }
         }
     }

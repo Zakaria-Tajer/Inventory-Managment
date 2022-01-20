@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['unique_id'])){
+    
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +29,7 @@
             <div class="errorText" id="errorText">
                 <h1 id="ErrorText">d</h1>
             </div>
-            <form class="form"  id="form" enctype="multipart/form-data">
+            <form class="form" action="#" id="form" enctype="multipart/form-data">
                 <input type="email" name="Email" placeholder="Email" id="SignupEmail" required>
                 <input type="password" name="Password_ver"  placeholder="password" id="passwordSign" required>
                 <input type="password" name="Password_mat"  placeholder="Confirm password" id="passwordSign1" required>
@@ -41,15 +49,17 @@
                 <button id="login-loaded">Login</button>
                 <button id="Sign">Sign Up</button>
             </div>
-            <form class="form" action="./signupValidation/php/login.php" method="POST" id="formd">
-                <input type="email" name="loginEmail" id="loginEmail"  placeholder="Email" required>
-                <!-- <span class="animate__animated" id="errorText"></span> -->
+            <div class="errorTextlogin" id="errorTextlogin">
+                <h1 id="LoginText">d</h1>
+            </div>
+            <form class="form" action="#" id="login-form">
+                <input type="email" name="loginEmail" placeholder="Email" required>
                 <input type="password" name="loginPassword" id="pswLogin" placeholder="password" required>
                 <div class="pswForgeted">
                     <a href="#">Forget password?</a>
                 </div>
                 <div class="btn-Sign-Up">
-                    <button type="submit" id="login-btn">Login</button>
+                    <button type="submit" id="login-btn" name="submit">Login</button>
                     <h3>Not a Member? <a href="#" id="link">Signup now</a></h3>
         
                 </div>
