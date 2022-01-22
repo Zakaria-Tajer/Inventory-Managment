@@ -48,6 +48,7 @@
                     <i class="fas fa-users-cog"></i>
                     <a href="/admin-pages/admin-manage/manage.php" id="manage-employee">Manage Employee</a>
                 </li>
+               
             </ul>
             <div class="logout">
                 <h2>Logout</h2>

@@ -70,7 +70,7 @@ if(!isset($_SESSION['unique_id'])){
 
 
     <script src="./app.js"></script>
-    <script src="./signupValidation/js/signup.js"></script>
+    <!-- <script src="./signupValidation/js/signup.js"></script> -->
     <script src="./signupValidation/js/login.js"></script>
     <script src="https://kit.fontawesome.com/99026984ca.js" crossorigin="anonymous"></script>
 </body>
