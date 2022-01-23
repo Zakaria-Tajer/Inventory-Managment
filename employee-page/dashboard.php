@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../admin-pages/main.css">
-    <link rel="stylesheet" href="./main.css">
-    <title>DashBoard</title>
-</head>
+<?php
+    session_start();
+
+if(!isset($_SESSION['unique_id'])){
+    header("location: ../index.php");
+}
+
+?>
+
 <body>
     <?php
-        include('../admin-pages/navbar.php');
+        include_once './header.php';
+        include '../admin-pages/navbar.php';
     ?>
         <?php
             include "./php/prodConn.php";
@@ -25,14 +25,14 @@
             <div class="ic">
                 <i class="fas fa-times" id="close"></i>
             </div>
-        <form class="adding" id="from_added" action="#">
-            <input type="text" id="product_name" name="produtName" placeholder="Product_Name..">
-            <input type="text" name="productId" placeholder="Prodcut_id..">
-            <input type="text" name="productPrice" placeholder="Product_Price..">
-            <input type="file" name="images"  accept="image">
-            <!-- <img src="./php/uploaded_phones/" alt=""> -->
-            <button type="submit" id="add_btn" name="add-row">Add</button>
-        </form>
+            <form class="adding" id="from_added" action="#">
+                <input type="text" id="product_name" name="produtName" placeholder="Product_Name..">
+                <input type="text" name="productId" placeholder="Prodcut_id..">
+                <input type="text" name="productPrice" placeholder="Product_Price..">
+                <input type="file" name="images"  accept="image">
+                <!-- <img src="./php/uploaded_phones/" alt=""> -->
+                <button type="submit" id="add_btn" name="add-row">Add</button>
+            </form>
         </div>
         <div class="text-p">
             <h1>Product Management</h1>
@@ -60,13 +60,13 @@
                         <div class="color"></div>
                     </div>   
                 </div>
-                <div class="rm_md" id="button_form">
+                <form class="rm_md" id="button_form">
                     <!-- <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>"> -->
                     <!-- <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button> -->
-                    <a href="./php/prod_added.php?delete=<?php echo $row['id'];?>" id="rem" class="button_remove">Remove</a>
+                    <a href="./php/removeProd.php?delete=<?php echo $row['id'];?>" id="rem" class="button_remove">Remove</a>
                     <button class="md" id="modifier_btns">Modifier</button>
                     <!-- <img src="./dashboard.php" alt=""> -->
-               </div>
+               </form>
 
                 <form class="form" id="formed" action="<?php $row['id']?>">
                     <input type="text" placeholder="Product Name" name="UpdateName" >
@@ -87,5 +87,6 @@
     </div>
     <script src="./index.js"></script>
     <script src="./js/product.js"></script>
+    <script src="./js//removedProducts.js"></script>
 </body>
 </html>

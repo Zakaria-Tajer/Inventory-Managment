@@ -13,6 +13,7 @@
         include('../navbar.php');
     ?>
             <div>
+    
                 <i class="fas fa-bars" id="menu-bars"></i>
             </div>
             <div class="action-list">
@@ -31,8 +32,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php 
+
+                            include '../connection.php';
+                            $sql = "SELECT * FROM `employee`";
+                            $query = mysqli_query($conn, $sql);
+                            $rows = mysqli_fetch_assoc($query);
+        
+                            ?>
                             <tr>
-                                <td>Jhon</td>
+                                <td><?php echo $rows['fname']?></td>
                                 <td>Product</td>
                                 <td>id</td>
                                 <td>Date</td>

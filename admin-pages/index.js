@@ -6,6 +6,9 @@ menu.addEventListener('click', ()=> {
 })
 
 
+const removedProductsCount = document.getElementById('removedProductsCount')
+
+
 
 
 const logout = document.getElementById('logout')

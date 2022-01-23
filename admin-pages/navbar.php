@@ -14,20 +14,15 @@
                     <img src="#">
                 </div>
                 <div class="info">
-                    <h1>Jhon Smith</h1>
+                    <h1 id="Actual_Name">Jhon Smith</h1>
                     <h3>Admin</h3>
+                </div>
+                <i class="fas fa-edit" id="edit_name"></i>
+                <div class="edit" id="popup_edit">
+                    <input type="text" placeholder="Enter Your Name" class="changeName" id="name">
+                    <button id="changeNameBtn">Change</button>
                 </div>
             </div>
-            
-            <!-- <div class="user-admin">
-                <div class="user-circle">
-                    <img src="#">
-                </div>
-                <div class="info">
-                    <h1>Jhon Smith</h1>
-                    <h3>Admin</h3>
-                </div>
-            </div> -->
             </div>
         </nav>
         <div class="sidebar" id="sidebar-showed">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,20 +16,34 @@
             <div>
                 <i class="fas fa-bars" id="menu-bars"></i>
             </div>
+            <?php
+                include './connection.php';
+                $query = mysqli_query($conn, "SELECT * FROM `employee`");
+                $row = mysqli_num_rows($query);
+                
+                $query1 = mysqli_query($conn, "SELECT * FROM `products`");
+                $productRows = mysqli_num_rows($query1);
+                $products = mysqli_fetch_assoc($query1);
+
+                $query = "SELECT * FROM `employee`";
+                $sql = mysqli_query($conn, $query);
+                $employee = mysqli_fetch_assoc($sql);
+            ?>
         <section class="content">
             <h1 class="dash-board">Dashboard</h1>
             <div class="boxs-container">
                 <div class="box">
                     <h2>Total Employees</h2>
                     <div class="box-content">
-                        <h2>0</h2>
+                        <!-- <img src="./php/admin.php" alt=""> -->
+                        <h2><?php echo $row?></h2>
                         <i class="fas fa-users"></i>
                     </div>
                 </div>
                 <div class="box">
                     <h2>Total Products</h2>
                 <div class="box-content">
-                    <h2>0</h2>
+                    <h2><?php echo $productRows?></h2>
                     <i class='bx bx-package'></i>
                     </div>
                 </div>
@@ -42,11 +57,12 @@
                 <div class="box">
                     <h2>Total Removes Products</h2>
                 <div class="box-content">
-                    <h2>0</h2>
+                    <h2 id="removedProductsCount">0</h2>
                     <img src="../img/remove.png">
                 </div>
                 </div>
             </div>
+          
 
             <div class="table-container">
                 <div class="title-action">
@@ -63,34 +79,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Jhon</td>
-                                <td>Product</td>
-                                <td>Date</td>
-                                <td>
-                                    <div class="action-type">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <i class="fas fa-minus-circle"></i>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php
+                        
 
-                            <tr>
-                            <td>Jhon</td>
-                                <td>Product</td>
-                                <td>Date</td>
-                                <td>
-                                    <div class="action-type">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <i class="fas fa-minus-circle"></i>
-                                    </div>
-                                </td>
-                            </tr>
 
+                            $query2 = "SELECT * FROM `employee`";
+                            $sql2 = mysqli_query($conn, $query2);
+                             if(mysqli_num_rows($sql2)> 0){
+                                while($names = mysqli_fetch_assoc($sql2)){
+                        ?>
                             <tr>
-                            <td>Jhon</td>
-                                <td>Product</td>
-                                <td>Date</td>
+                                <td><?php echo $names['fname']?></td>
+                                <td><?php echo $products['product_name']?></td>
+                                <td><?php echo $names['joinedDate']?></td>
                                 <td>
                                     <div class="action-type">
                                         <i class="fas fa-plus-circle"></i>
@@ -98,50 +99,61 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            <tr>
-                            <td>Jhon</td>
-                                <td>Product</td>
-                                <td>Date</td>
-                                <td>
-                                    <div class="action-type">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <i class="fas fa-minus-circle"></i>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php 
+                                }
+                            }
+                            ?>
+                          
+                            
                         </tbody>
                     </table>
                 </div>
+
                 <div class="employee-content">
                     <div class="title-employee">
                         <h1>Recent Employees</h1>
                     </div>
                     <div class="employee-list">
+                        <?php 
+                            $query = "SELECT * FROM `employee`";
+                            $sql3 = mysqli_query($conn, $query);
+                            if(mysqli_num_rows($sql3)> 0){
+                            while($emp = mysqli_fetch_assoc($sql3)){
+                        
+                        ?>
+                        <div class="info-container">
+                            <div class="circle-emp">
+                                <img src="<?php echo "../admin-pages/admin-manage/employePics/". $emp['img']?>">
+                            </div>
+                            <h1><?php echo $emp['fname'];?></h1>
+                        </div>
+                        <?php }
+                            }
+                        
+                        ?>
+
+                    
+<!--                         
                         <div class="info-container">
                             <div class="circle-emp">
                                 <img src="#" >
                             </div>
                             <h1>Employe Name</h1>
                         </div>
+
                         <div class="info-container">
                             <div class="circle-emp">
                                 <img src="#" >
                             </div>
                             <h1>Employe Name</h1>
                         </div>
-                        <div class="info-container">
-                            <div class="circle-emp">
-                                <img src="#" >
-                            </div>
-                            <h1>Employe Name</h1>
-                        </div>
+
                         <div class="info-container">
                             <div class="circle-emp">
                                 <img src="#">
                             </div>
                             <h1>Employe Name</h1>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -149,12 +161,7 @@
         </main>
 
 
-
-
-
-
-
-
         <script src="./index.js"></script>
+        <script src="./js/admin.js"></script>
 </body>
 </html>

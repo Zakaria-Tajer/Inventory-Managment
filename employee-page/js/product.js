@@ -8,7 +8,14 @@ const con = document.getElementById('containers')
 
 const closeIcon = document.getElementById('close')
 const update = document.getElementById('update')////btn
-// const button_form = document.getElementById('button_form')
+const rem_btn = document.getElementById('rem-btn')////btn
+const button_form = document.getElementById('button_form')
+
+button_form.onclick = (e)=> {
+    // e.preventDefault()
+}
+
+
 
 const md = document.querySelectorAll('#modifier_btns')
 const formed = document.getElementById('formed')
@@ -17,15 +24,15 @@ console.log(md);
 
 
 for (let i = 0; i < md.length; i++) {
-   md[i].addEventListener('click', ()=> {
+    md[i].addEventListener('click', ()=> {
        formed.classList.toggle('active')
        container_all[i].classList.toggle('active')
    })
    
 }
-formed.addEventListener('submit', (e)=> {
-    e.preventDefault()
-})
+// formed.addEventListener('click', (e)=> {
+//     e.preventDefault()
+// })
 
 
 
@@ -82,3 +89,16 @@ update.addEventListener('click', ()=> {
 })
 
     
+// rem_btn.addEventListener('click', ()=> {
+//     const req = new XMLHttpRequest()
+//     req.onreadystatechange = ()=> {
+//         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+//             let data = req.responseText
+//             console.log(data)
+            
+//         }
+//     }
+//     req.open('POST', './php/removeProd.php', true)
+//     let formed_form = new FormData(button_form)
+//     req.send()
+// })

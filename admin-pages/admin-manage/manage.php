@@ -12,13 +12,33 @@
     <?php
         include('../navbar.php');
     ?>
+
     <div>
         <i class="fas fa-bars" id="menu-bars"></i>
     </div>
-    <div class="manag-list">
-        <h1>List of Actions</h1>
+    <div class="popupEmployeeAdded" id="popupEmployeeAdded">
+        <form class="wrapper" id="warpperForm" enctype="multipart/form-data" action="#">
+            <div class="create-text">
+                <h1>Create An Account</h1>
+            </div>
+            <div class="errorDisplayer" id="errorDisplayer">
+                <h3 id="textError"></h3>
+            </div>
+            <input type="text" placeholder="First Name.." name="Fname">
+            <input type="text" placeholder="Last Name.."  name="Lname">
+            <input type="email" placeholder="Email.." name="email"> 
+            <input type="password" placeholder="Password.." name="password">
+            <input type="password" placeholder="Re-Enter password.." name="passwordVerification">
+            <input type="file" accept="image" name="img">
+            <div class="btn">
+                <button class="addFromAdmin" id="addFromAdmin" type="submit">Add</button>
+            </div>
+        </form>
     </div>
     <div class="list-container">
+        <div class="manag-list">
+            <h1>List of Actions</h1>
+        </div>
         <div class="table-content">
             <table class="container-table">
                 <thead>
@@ -31,19 +51,26 @@
                         <th>Status</th>
                         <th>Employee Action</th>
                     </tr>
+            <?php
+                include '../connection.php';
+                $query = "SELECT * FROM `employee`";
+                $sql = mysqli_query($conn, $query);
+                if(mysqli_num_rows($sql)> 0){
+                    while($rows = mysqli_fetch_assoc($sql)){
+            ?>
                 </thead>
                 <tbody>
                     <tr id="tr">
 
-                        <td>#12</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
+                        <td>#<?php echo $rows['id']?></td>
+                        <td><?php echo $rows['fname']?></td>
+                        <td><?php echo $rows['lname']?></td>
+                        <td><?php echo $rows['email']?></td>
+                        <td><?php echo $rows['joinedDate']?></td>
                         <td>
                         <div class="action-type">
                             <div class="session-active">
-                                <h4>Active</h4>
+                                <h4><?php echo $rows['status']?></h4>
                             </div>
                             <div class="session-offline">
                                 <h4>offline</h4>
@@ -55,198 +82,22 @@
                         <td>
                             <div class="removeAndAdd">
                                 <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
+                                    <button style="background-color: #357EBD;" id="addEmployee">Add Employee</button>
+                                    <!-- <a style="background-color: #357EBD;" href="./removeEmployee.php?id=<?php echo $rows['id'];?>"id="rem" class="button_remove">Add</a> -->
+                                    <!-- <button style="background-color: #D9534F;" id="removeEmployee">Remove Employee</button> -->
+                                    <a href="./removeEmployee.php?delete=<?php echo $rows['id'];?>" id="rem" class="button_remove">Remove</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-
-                    <tr>
- 
-                    <td>#14</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-    
-                    <td>#19</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-
-                    </tr>
-
-                    <tr>
- 
-                    <td>#19</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-
-                    <td>#19</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
- 
-                    <td>#19</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-   
-                    <td>#19</td>
-                        <td>jhon</td>
-                        <td>smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                                <div class="session-active">
-                                    <h4>Active</h4>
-                                </div>
-                                <div class="session-offline">
-                                    <h4>offline</h4>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <!-- <tr>
-                    <td>#20</td>
-                        <td>jhon</td>
-                        <td>Smith</td>
-                        <td>co@gmail.com</td>
-                        <td>17/0/2000</td>
-                        <td>
-                            <div class="action-type">
-                            <div class="session-active">
-                                <h4>Active</h4>
-                            </div>
-                            <div class="session-offline">
-                            <h4>offline</h4>
-                            </div>
-                        </td>
-                                                <td>
-                            <div class="removeAndAdd">
-                                <div class="add">
-                                    <button style="background-color: #357EBD;">Add Employee</button>
-                                    <button style="background-color: #D9534F;">Remove Employee</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr> -->
-                </tbody>
-            </table>
-        </div>
+                <?php 
+            }
+        }
+                
+                ?>
+                   
     </div>
     <script src="./index.js"></script>
+    <script src="../js/admin.js"></script>
 </body>
 </html>

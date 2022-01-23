@@ -158,13 +158,65 @@
 }
 .sidebar {
     width: 300px;
-    height: 91.5%;
+    height: 93%;
+    /* display: none; */
     position: absolute;
+    /* right: 0; */
     background-color: #0B2558;
     font-family: var(--secondary-font);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.changeName {
+    height: 35px;
+    width: 210px;
+    outline: none;
+}
+.edit input[type= 'text']{
+    padding-left: 20px;
+}
+.edit button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4169e1;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.edit.active {
+    /* display: flex; */
+}
+.edit {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+
+
+
+.edit {
+    width: 350px;
+    position: absolute;
+    height: 70px;
+    display: none;
+    background-color: white;
+}
+
+
+.edit.active {
+    display: flex;
+}
+
+#edit_name  {
+    position: absolute;
+    /* top: 0; */
+    font-size: 25px;
+    left: 95%;
+    cursor: pointer;
+    display: block;
+}
 .sidebar ul {
     position: relative;
     top: 5%;
@@ -354,13 +406,18 @@
 .circle-emp {
     width: 60px;
     height: 60px;
-    background-color: blue;
+    /* background-color: blue; */
     position: relative;
     top: 7px;
     margin-left: 20px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
+}
+.circle-emp img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 .info-container h1 {
     margin-top: 2em;

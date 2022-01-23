@@ -283,7 +283,8 @@ body {
 .showed_up {
     width: 80%;
     height: 500px;
-    background-color: tomato;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: absolute;
     z-index: 1;
     right: 4%;

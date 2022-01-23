@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +22,9 @@
     font-family: var(--secondary-font);
     font-weight: 500;
     margin-left: 20px;
+}
+.container-table {
+    margin-top: 5%;
 }
 .container-table input {
     position: relative;
@@ -53,9 +58,98 @@
     font-family: var(--name-font);
     color: white;
     font-size: 17px;
+    cursor: pointer;
+}
+.add a {
+    /* height: 40px;
+    width: 150px; */
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    font-family: var(--name-font);
+    color: white;
+    background-color: #D9534F;
+    font-size: 17px;
+    text-decoration: none;
+}
+.popupEmployeeAdded {
+    width: 60%;
+    margin-top: 7em;
+    height: 50%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: absolute;
+    z-index: 1;
+    left: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.popupEmployeeAdded.active {
+    display: flex;
+}
+.wrapper {
+    width: 450px;
+    height: 400px;
+    background-color: white;
+}
+.wrapper input:nth-child(5) {
+    width: 300px;
+ }
+.create-text {
+    display: flex;
+    justify-content: center;
+}
+.create-text h1 {
+    /* margin-top: -10px; */
+    font-family: 'Open Sans', sans-serif;
+
+ }
+
+.wrapper input {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 180px;
+    height: 40px;
+    position: relative;
+    top: 3%;
+    outline: none;
+}
+.wrapper input[type = 'text'],[type = 'email'],[type = 'password']{
+    padding-left: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
+.btn {
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.btn button {
+    padding: 10px 50px;
+    background-color: #357EBD;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+.errorDisplayer {
+    width: 400px;
+    height: 50px;
+    background-color: #F8D7DB;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
 
+#textError {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 10px;
+}
 @media only screen and (max-width : 480px) {
     body {
         width: 480px;
@@ -86,6 +180,10 @@
         position: absolute;
         top: -3%;
     }
+    .add a {
+        position: relative;
+        top: 15px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -105,5 +203,9 @@
         position: absolute;
         top: 17%;
         margin-left: 30px;
+    }
+    .add a {
+        position: relative;
+        top: 15px;
     }
 }
