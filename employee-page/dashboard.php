@@ -2,7 +2,7 @@
     session_start();
 
 if(!isset($_SESSION['unique_id'])){
-    header("location: ../index.php");
+    // header("location: index.php");
 }
 
 ?>
@@ -62,8 +62,8 @@ if(!isset($_SESSION['unique_id'])){
                 </div>
                 <form class="rm_md" id="button_form">
                     <!-- <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>"> -->
-                    <!-- <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button> -->
-                    <a href="./php/removeProd.php?delete=<?php echo $row['id'];?>" id="rem" class="button_remove">Remove</a>
+                    <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button>
+                    <!-- <a href="./php/removeProd.php?delete=<?php echo $row['id'];?>" id="rem" class="button_remove">Remove</a> -->
                     <button class="md" id="modifier_btns">Modifier</button>
                     <!-- <img src="./dashboard.php" alt=""> -->
                </form>
