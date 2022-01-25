@@ -18,8 +18,7 @@ if(!isset($_SESSION['id'])){
 
         <?php
             include "./php/prodConn.php";
-            $sql = "SELECT * FROM `produc`";
-            $result = $conn->query($sql);
+            
         ?>
 
             <i class="fas fa-bars" id="menu-bars"></i>
@@ -43,6 +42,8 @@ if(!isset($_SESSION['id'])){
         </div>
         <div class="containers" id="containers">
            <?php
+           $sql = "SELECT * FROM `produc`";
+           $result = $conn->query($sql);
            if($result->num_rows > 0){
                while($row = $result->fetch_assoc()){
            ?>
@@ -64,16 +65,14 @@ if(!isset($_SESSION['id'])){
                         <div class="color"></div>
                     </div>   
                 </div>
-                <?php
 
-                ?>
-                <form class="rm_md" id="button_form">
+                <div class="rm_md" id="button_form">
                     <!-- <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>"> -->
                     <!-- <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button> -->
                     <a href="./php/rm.php?delete=<?php echo $row['id'];?>" id="rem-btn" class="button_remove">Remove</a>
                     <button class="md" id="modifier_btns">Modifier</button>
                     <!-- <img src="./dashboard.php" alt=""> -->
-               </form>
+               </div>
 
                 <form class="form" id="formed" action="<?php $row['id']?>">
                     <input type="text" placeholder="Product Name" name="UpdateName" >
@@ -93,8 +92,8 @@ if(!isset($_SESSION['id'])){
 
     </div>
     <script src="./index.js"></script>
-    <script src="./js/product.js"></script>
     <script src="./js//removedProducts.js"></script>
     <script src="https://kit.fontawesome.com/18228bcc89.js" crossorigin="anonymous"></script>
 </body>
+<script src="./js/product.js"></script>
 </html>

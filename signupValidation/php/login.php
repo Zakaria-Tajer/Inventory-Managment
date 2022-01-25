@@ -12,10 +12,14 @@
         $sql = mysqli_query($conn, "SELECT * FROM `employee` WHERE email = '{$email}' AND password = '{$pass}'");
         if(mysqli_num_rows($sql)> 0){
             $rows = mysqli_fetch_assoc($sql);
+            // echo $rows['id'];
             $status = "Active Now";
             $sql3 = mysqli_query($conn,"UPDATE `employee` set status = '{$status}' WHERE id = '{$rows['id']}'");
             if($sql3){
                 $_SESSION['id'] = $rows['id'];
+                $_SESSION['fname'] = $rows['fname'];
+                $_SESSION['lname'] = $rows['lname'];
+                $_SESSION['img'] = $rows['img'];
                 echo 'Success';
             }
             // $id = $rows['id'];
@@ -29,6 +33,9 @@
         if(mysqli_num_rows($sqlOther)> 0){
             $ad = mysqli_fetch_assoc($sqlOther);
             $_SESSION['id'] = $ad['id'];
+            $_SESSION['fname'] = $ad['fname'];
+            // $_SESSION['lname'] = $ad['lname'];
+            $_SESSION['img'] = $ad['img'];
             echo 'admin';
         }else {
             // echo 'incorrect Email or password';

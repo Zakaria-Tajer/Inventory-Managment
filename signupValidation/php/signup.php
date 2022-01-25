@@ -35,24 +35,29 @@ include_once('./connection.php');
 
                         $new_img_name = $time.$img_name;
                         if(move_uploaded_file($img_TmpName, 'UploadedImages/'.$new_img_name)){
-                            $status = "Active";
+                            $status = "Offline NOw";
+                            $fname = "zakaria";
                             $random = rand(time(), 10000);
 
-                            $sql1 = "INSERT INTO `user-registers`(unique_id, email, passwordVerify, passwordMatch, img, status) 
-                            VALUES('{$random}','{$Email}', '{$Password_ver}', '{$Password_mat}','{$new_img_name}','${status}')";
+                            $sql1 = "INSERT INTO `user-registers`(unique_id, email, passwordVerify, passwordMatch, img, status,fname) 
+                            VALUES('{$random}','{$Email}', '{$Password_ver}', '{$Password_mat}','{$new_img_name}','${status}','{$fname}')";
                             
                             if($sql1){
+                                mysqli_query($conn,$sql1);
                                 $sql3 = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$Email}'");
                                 if(mysqli_num_rows($sql3)> 0){
                                     $row = mysqli_fetch_assoc($sql);
                                     $_SESSION['id'] = $row['id'];
+                                    $_SESSION['fname'] = $row['fname'];
+                                    $_SESSION['lname'] = $row['lname'];
                                     echo 'Success';
-                                    mysqli_query($conn,$sql1);
-                                
+                                    
                                 }
+
                             }else {
                                 echo 'Somthing Went wrong';
                             }
+
                         }
                     }else {
                         echo 'You cannot Upload this Type of image';

@@ -56,16 +56,18 @@
                     <i class='bx bx-package'></i>
                     </div>
                 </div>
+                
                 <div class="box">
                     <h2>Total added Products</h2>
                 <div class="box-content">
-                    <h2>0</h2>
+                    <!-- <h2><?php print_r($read1);?></h2> -->
                     <img src="../img/box.png">
                 </div>
                 </div>
                 <?php 
                     $fileHandle = fopen('../employee-page/php/clicks.txt', 'r+');
                     $read = fread($fileHandle, filesize('../employee-page/php/clicks.txt'));
+
                 ?>
                 <div class="box">
                     <h2>Total Removes Products</h2>

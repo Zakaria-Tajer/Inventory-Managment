@@ -3,11 +3,6 @@ const changeNameBtn = document.getElementById('changeNameBtn')
 const ChangeName = document.getElementById('name')
 const Actual_Name = document.getElementById('Actual_Name')
 
-window.onload = ()=> {
-    let Actname = localStorage.getItem('Name')
-    Actual_Name.textContent = Actname
-    
-}
 
 changeNameBtn.addEventListener('click', ()=> {
     console.log(ChangeName.value);

@@ -25,13 +25,15 @@ button_form.addEventListener('click', (e)=>{
 
 const md = document.querySelectorAll('#modifier_btns')
 const formed = document.getElementById('formed')
+console.log(formed);
 const container_all = document.querySelectorAll('#container_all')
+console.log(container_all);
 console.log(md);
 
 
 for (let i = 0; i < md.length; i++) {
     md[i].addEventListener('click', ()=> {
-       formed.classList.toggle('active')
+       formed[i].classList.toggle('active')
        container_all[i].classList.toggle('active')
    })
    
@@ -109,23 +111,23 @@ update.addEventListener('click', ()=> {
 // }
 
 
-for (let i = 0; i < rem_btn.length; i++) {
-    rem_btn[i].addEventListener('click', ()=> {
-        const req = new XMLHttpRequest()
-        req.onreadystatechange = ()=> {
-            if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                let data = req.responseText
-                console.log(data)
-                if(data == 'good'){
-                    // location.assign('./dashboard.php')
-                }
-            }
-        }
-        req.open('POST', './php/rm.php', true)
-        let formed_formed = new FormData(button_form)
-        req.send(formed_formed)
-    })
+// for (let i = 0; i < rem_btn.length; i++) {
+//     rem_btn[i].addEventListener('click', ()=> {
+//         const req = new XMLHttpRequest()
+//         req.onreadystatechange = ()=> {
+//             if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+//                 let data = req.responseText
+//                 console.log(data)
+//                 if(data == 'good'){
+//                     // location.assign('./dashboard.php')
+//                 }
+//             }
+//         }
+//         req.open('POST', './php/rm.php', true)
+//         let formed_formed = new FormData(button_form)
+//         req.send(formed_formed)
+//     })
     
     
-}
+// }
 

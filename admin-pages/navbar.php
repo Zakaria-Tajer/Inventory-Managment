@@ -1,13 +1,19 @@
 <?php
-    
-    include 'connection.php';
-    $sql = "SELECT * FROM `employee`";
-    $query = mysqli_query($conn,$sql);   
-    // $result = mysqli_fetch_all($query);
-    $result = mysqli_fetch_assoc($query);
-    // while($row_users = mysqli_fetch_assoc($query));
-    // while($names = mysqli_fetch_assoc($query));
 
+include 'connection.php';
+    // session_start();
+    // $sql = "SELECT * FROM `employee`";
+    // $query = mysqli_query($conn,$sql);   
+    // // $result = mysqli_fetch_all($query);
+    // $result = mysqli_fetch_assoc($query);
+    // // while($row_users = mysqli_fetch_assoc($query));
+    // // while($names = mysqli_fetch_assoc($query));
+    if(isset($_SESSION['id'])){
+        $fname = $_SESSION['fname'];
+        // $lname = $_SESSION['lname'];
+        $img = $_SESSION['img'];
+    }
+    
     
 ?>
 
@@ -26,10 +32,10 @@
             <!-- ../signupValidation/php/UploadedImages/ -->
             <div class="user-admin">
                 <div class="user-circle">
-                <!-- <img src="<?php echo "../signupValidation/php/UploadedImages/". $result['img']?>"> -->
+                <img src="<?php echo "../signupValidation/php/UploadedImages/". $img?>">
                 </div>
                 <div class="info">
-                    <h1 id="Actual_Name"><?php echo $result['fname'].' '. $result['lname']?></h1>
+                    <h1 id="Actual_Name"><?php echo $fname?></h1>
                     <h3>Admin</h3>
                 </div>
                 <i class="fas fa-edit" id="edit_name"></i>
@@ -44,11 +50,11 @@
             <ul>
                 <li>
                     <i class='bx bx-grid-alt' id="dashboard-icon"></i>
-                    <a href="#" id="dashboard">Dashboard</a>
+                    <a href="./dashboard.php" id="dashboard">Dashboard</a>
                 </li>
                 <li id="hide">
                     <i class="fas fa-cubes"></i>
-                    <a href="../admin-pages/admin-products/products.php" id="products">Products</a>
+                    <a href="./admin-products/products.php" id="products">Products</a>
                 </li>
                 <li>
                     <i class="fas fa-envelope"></i>
@@ -63,7 +69,6 @@
           
             <div class="logout" id="logout_form">
                 <h2>Logout</h2>
-                <!-- <a href="../signupValidation/php/logout.php?log=<?php echo $result['id']?>">Logout</a> -->
                 <i class="fas fa-power-off" id="logout"></i>
             </div>
         </div>

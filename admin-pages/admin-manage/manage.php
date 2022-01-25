@@ -83,13 +83,11 @@ if(!isset($_SESSION['id'])){
                         <td><?php echo $rows['email']?></td>
                         <td><?php echo $rows['joinedDate']?></td>
                         <td>
-                        <div class="action-type">
-                            <div class="session-active">
-                                <h4><?php echo $rows['status']?></h4>
+                        <div class="action-type" id="">
+                            <div class="session-active" id="session_active">
+                                <h4 id=""><?php echo $rows['status']?></h4>
                             </div>
-                            <div class="session-offline">
-                                <h4>offline</h4>
-                            </div>
+                        
                             <!-- <i class="fas fa-plus-circle"></i> -->
                             <!-- <i class="fas fa-minus-circle"></i> -->
                         </div>
@@ -97,11 +95,7 @@ if(!isset($_SESSION['id'])){
                         <td>
                             <div class="removeAndAdd">
                                 <div class="add">
-                                    <!-- <button style="background-color: #357EBD;" id="addEmployee">Add Employee</button> -->
-                                    <!-- <a style="background-color: #357EBD;" href="./removeEmployee.php?id=<?php echo $rows['id'];?>"id="rem" class="button_remove">Add</a> -->
-                                    <!-- <button style="background-color: #D9534F;" id="removeEmployee">Remove Employee</button> -->
                                     <a href="./removeEmployee.php?delete=<?php echo $rows['id'];?>" id="rem" class="button_remove">Remove</a>
-                                    <!-- <a href="/logout.php?id=<?php echo $rows['id'];?>"  class="button_remove">Remove</a> -->
                                 </div>
                             </div>
                         </td>

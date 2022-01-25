@@ -31,24 +31,33 @@
     /* width: 0; */
 }
 .session-active {
-    width: 50px;
-    height: 20px;
+    width: 100px;
+    height: 30px;
     background-color: #90ee90;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.session-active.active {
+    background-color: #90ee90;
+    display: none;
+}
 .session-active h4 {
     font-size: 14px;
 }
 .session-offline {
-    width: 50px;
-    height: 20px;
+    width: 100px;
+    height: 30px;
     background-color: #ffcccb;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.s
+.session-offline h4 {
+    font-size: 14px;
 }
 .add button{
     height: 40px;
@@ -86,6 +95,7 @@
     align-items: center;
     display: none;
 }
+
 .popupEmployeeAdded.active {
     display: flex;
 }
@@ -218,6 +228,15 @@
     }
     .addEmployee {
         margin-top: 50px;
+    }
+    .popupEmployeeAdded {
+        width: auto;
+        left: 3%;
+        margin-top: 8em;
+        height: 400px;
+    }
+    .wrapper {
+        margin-left: 10px;
     }
 }
 

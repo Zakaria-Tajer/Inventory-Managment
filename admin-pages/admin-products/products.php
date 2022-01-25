@@ -1,9 +1,10 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['email'])){
+    if(!isset($_SESSION['id'])){
         header("location: /index.php");
     }
+    
 
 ?>
 
@@ -41,24 +42,26 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php 
-
+                        <?php
                             include '../connection.php';
                             $sql = "SELECT * FROM `employee`";
                             $query = mysqli_query($conn, $sql);
 
                             $sql2 = "SELECT * FROM `produc`";
                             $query2 = mysqli_query($conn, $sql2);
-                            $res = mysqli_fetch_assoc($query2);
-                            // $rows = mysqli_fetch_assoc($query);
+
+                            
+                            $prod = mysqli_fetch_assoc($query2);
+
                             if(mysqli_num_rows($query)> 0){
                                 while($results = mysqli_fetch_assoc($query)){
                             ?>
+
                             <tr>
                                 <td><?php echo $results['fname']?></td>
-                                <td><?php echo $res['product_name']?></td>
-                                <td><?php echo $res['id']?></td>
-                                <td><?php echo $res['addedDate']?></td>
+                                <td><?php echo $prod['product_name']?></td>
+                                <td><?php echo $prod['id']?></td>
+                                <td><?php echo $prod['addedDate']?></td>
                                 <td>
                                     <div class="action-type">
                                         <i class="fas fa-plus-circle"></i>
@@ -66,19 +69,6 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            <!-- <tr>
-                            <td>Jhon</td>
-                                <td>Product</td>
-                                <td>id</td>
-                                <td>Date</td>
-                                <td>
-                                    <div class="action-type">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <i class="fas fa-minus-circle"></i>
-                                    </div>
-                                </td>
-                            </tr> -->
                         <?php
                             }
                         }
