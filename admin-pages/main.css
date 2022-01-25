@@ -17,7 +17,7 @@
 
 .hero {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     background-color: #f1f1f1;
 }
 .menu-bars {
@@ -120,6 +120,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.user-circle img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 100%;
 }
 .info {
     font-family: var(--name-font);
@@ -327,6 +333,7 @@
     height: 52%;
     margin-left: 30px;
 }
+
 .table-content h1 {
     position: relative;
     bottom: 15px;
@@ -336,9 +343,10 @@
     width: 30%;
     height: 52%;
     /* background-color: brown; */
-    position: absolute;
+    position: relative;
     right: 10px;
-    top: 60%;
+    bottom: 50px;
+    margin-left: auto;
 }
 .employee-content h1 {
     position: relative;
@@ -353,6 +361,7 @@
     min-width: 100%;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* overflow-y: scroll; */
 }
 .container-table thead tr{
     background-color: turquoise;
@@ -360,6 +369,10 @@
     padding-left: 20px;
     /* text-align: ; */
     /* padding-left: 110px; */
+    
+}
+.container-table tbody {
+    overflow-y: scroll;
 }
 .container-table th {
     padding: 20px 3em;
@@ -385,6 +398,18 @@
 .action-type i {
     margin-left: 10px;
 }
+thead th {
+    position: sticky;
+}
+.container-table  tr{
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+}
+.container-table tr{
+    width: 800px;
+    height: 100px;
+}
 .employee-list {
     width: 400px;
     height: 380px;
@@ -393,6 +418,11 @@
     margin-left: auto;
     margin-right: auto;
     position: absolute;
+    overflow-y: scroll;
+}
+.employee-list::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F1F1F1;
 }
 .info-container {
     width: 89%;
@@ -466,7 +496,7 @@
         margin-left: 3em;
     }
     .user-circle {
-        width: 100px;
+        width: 50px;
         height: 50px;
         /* left: 110%;
         position: absolute; */
@@ -523,9 +553,12 @@
         display:block;
         position: relative;
         top: 130%;
-        width: 500px;
+        /* width: 500px; */
         /* overflow-x: hidden; */
         left: -30%;
+    }
+    #edit_name{
+        display: none;
     }
     .employee-content {
         left: 5%;
@@ -542,11 +575,15 @@
         left: 15%;
     }
     .title-employee h1 {
-        bottom: 30px;
+        /* bottom: 30px; */
         font-size: 30px;
+        top: 1em;
     }
     .employee-list {
-        width: 480px;
+        /* width: 480px; */
+        position: relative;
+        top: 4em;
+        margin-left: 60px;
     }
     .info-container {
         display: flex;
@@ -557,6 +594,7 @@
     }
     .title-action {
         margin-left: 10em;
+        width: 100%;
     }
     .table-content {
         position: relative;
@@ -569,7 +607,11 @@
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     .hero {
-        height: 200vh;
+        height: 310vh;
+        /* width: 100%; */
+    }
+    #edit_name {
+        display: none;
     }
     .logo {
         margin-left: 2em;
@@ -579,7 +621,14 @@
         margin-right: 40px;
     }
     .user-circle {
-        width: 100px;
+        width: 60px;
+        height: 60px;
+    }
+    .user-circle img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100%;
     }
     .info h1{
         font-size: 20px;
@@ -612,7 +661,7 @@
         top: 25%;
     }
     .boxs-container {
-        background-color: yellowgreen;
+        /* background-color: yellowgreen; */
         position: absolute;
         left: -19%;
         /* right: 20%; */
@@ -635,32 +684,31 @@
     .container-table {
         width: 720px;
     }
+    .table-content {
+       
+    }
     .title-action h1{
         left: 12em;
         position: relative;
     }
     .employee-content {
-        position: absolute;
-        /* background-color: yellow; */
-        /* top: 600%; */
-        width: 770px;
-        left: 0;
-        height: 400px;
-        top: 720%;
-        display: flex;
-        justify-content: center;
+        position: relative;
+        margin-top: 170%;
+        margin-right: auto;
     }
     .title-employee {
-        position: absolute;
-        top: -12%;
+        width: 400px;
+       
+        /* background-color: blue; */
     }
     .title-employee h1 {
-        bottom: 30px;
-        left: -20px;
+        text-align: center;
+        top: 4em;
     }
     .employee-list {
         width: 500px;
         height: 400px;
+        margin-top: 7em;
     }
     .info-container {
         display: flex;

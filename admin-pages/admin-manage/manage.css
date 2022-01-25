@@ -24,7 +24,7 @@
     margin-left: 20px;
 }
 .container-table {
-    margin-top: 5%;
+    margin-top: 7%;
 }
 .container-table input {
     position: relative;
@@ -150,6 +150,34 @@
     position: relative;
     top: 10px;
 }
+.addEmployee {
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    font-family: var(--name-font);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+.manag-list {
+    width: 300px;
+}
+.manag-list h1 {
+    margin-bottom: 50px;
+    position: relative;
+    bottom: 30px;
+}
+.add_class {
+    margin-left: auto;
+    margin-right: 50px;
+    width: 150px;
+    height: 50px;
+    /* margin-top: 1em; */
+    position: relative;
+    /* background-color: black; */
+}
+
 @media only screen and (max-width : 480px) {
     body {
         width: 480px;
@@ -184,6 +212,13 @@
         position: relative;
         top: 15px;
     }
+    .manag-list h1 {
+        bottom: 0;
+        margin-bottom: 0;
+    }
+    .addEmployee {
+        margin-top: 50px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -200,8 +235,9 @@
         height: 900px;
     }
     .manag-list {
-        position: absolute;
-        top: 17%;
+        position: relative;
+        bottom:30px;
+        /* z-index: 1; */
         margin-left: 30px;
     }
     .add a {

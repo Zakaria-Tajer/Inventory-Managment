@@ -61,11 +61,11 @@
     }
 
 /* Note: Design for a width of 768px */
-    .products-container {
+    /* .products-container {
         width: 760px;
         left: 0;
         height: 900px;
-    }
+    } */
     .table-content {
         left: -3%;
         margin-top: 5%;

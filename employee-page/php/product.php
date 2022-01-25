@@ -1,7 +1,8 @@
 <?php
-
+  
     include_once('./prodConn.php');
-    
+
+
     // echo '1';
     $productName = mysqli_real_escape_string($conn,$_POST['produtName']);
     $productId = mysqli_real_escape_string($conn,$_POST['productId']);
@@ -26,21 +27,25 @@
                 if(move_uploaded_file($img_TmpName, 'uploaded_phones/'.$new_img_name)){
                     
                 $id_optional = rand(time(), 10000);
+                $date = date('Y-m-d');
 
-                $sql1 = "INSERT INTO  `products`(product_name, product_unique_id, product_price, product_img) 
-                VALUES('{$productName}','{$id_optional}', '{$productPrice}', '{$new_img_name}')";
+                $sql1 = "INSERT INTO  `produc`(product_name, product_unique_id, product_price, product_img, addedDate) 
+                VALUES('{$productName}','{$id_optional}', '{$productPrice}', '{$new_img_name}', '{$date}')";
+                if($sql1){
+                    mysqli_query($conn, $sql1);
+                    echo 'sucess';
+                    // echo 'Inserted';
+                    // header("location: ../dashboard.php");
+                }else {
+                    echo 'Error';
+                }
 
-                $check = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name = '{$productName}'");
+
+                $check = mysqli_query($conn, "SELECT * FROM `produc` WHERE product_name = '{$productName}'");
                 if(mysqli_num_rows($check)> 0){
                     echo 'Name Already Exist';
                 }else {
-                    if($sql1){
-                        mysqli_query($conn, $sql1);
-                        // echo 'Inserted';
-                        echo 'sucess';
-                    }else {
-                        echo 'Error';
-                    }
+                    
                 }
                 }
             }else {

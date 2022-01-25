@@ -1,4 +1,11 @@
+<?php
+    session_start();
 
+    if(!isset($_SESSION['id'])){
+        header("location: /index.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +35,8 @@
                 $query = "SELECT * FROM `employee`";
                 $sql = mysqli_query($conn, $query);
                 $employee = mysqli_fetch_assoc($sql);
+                
+                
             ?>
         <section class="content">
             <h1 class="dash-board">Dashboard</h1>
@@ -54,10 +63,14 @@
                     <img src="../img/box.png">
                 </div>
                 </div>
+                <?php 
+                    $fileHandle = fopen('../employee-page/php/clicks.txt', 'r+');
+                    $read = fread($fileHandle, filesize('../employee-page/php/clicks.txt'));
+                ?>
                 <div class="box">
                     <h2>Total Removes Products</h2>
                 <div class="box-content">
-                    <h2 id="removedProductsCount">0</h2>
+                    <h2 id="removedProductsCount"><?php print_r($read);?></h2>
                     <img src="../img/remove.png">
                 </div>
                 </div>
@@ -83,9 +96,9 @@
                         
 
 
-                            $query2 = "SELECT * FROM `employee`";
+                            $query2 = "SELECT * FROM `employee` ";
                             $sql2 = mysqli_query($conn, $query2);
-                             if(mysqli_num_rows($sql2)> 0){
+                             if(mysqli_num_rows($sql2)>= 0){
                                 while($names = mysqli_fetch_assoc($sql2)){
                         ?>
                             <tr>
@@ -131,29 +144,6 @@
                             }
                         
                         ?>
-
-                    
-<!--                         
-                        <div class="info-container">
-                            <div class="circle-emp">
-                                <img src="#" >
-                            </div>
-                            <h1>Employe Name</h1>
-                        </div>
-
-                        <div class="info-container">
-                            <div class="circle-emp">
-                                <img src="#" >
-                            </div>
-                            <h1>Employe Name</h1>
-                        </div>
-
-                        <div class="info-container">
-                            <div class="circle-emp">
-                                <img src="#">
-                            </div>
-                            <h1>Employe Name</h1>
-                        </div> -->
                     </div>
                 </div>
             </div>

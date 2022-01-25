@@ -4,16 +4,22 @@ const add_products = document.getElementById('add_products')
 const showed_up = document.getElementById('showed_up')
 const product_name = document.getElementById('product_name')
 const con = document.getElementById('containers')
+const logout = document.getElementById('logout')
+// const logout_form = document.getElementById('logout_form')
 
+
+logout_form.addEventListener('click', (e)=>{
+    e.preventDefault()
+})
 
 const closeIcon = document.getElementById('close')
 const update = document.getElementById('update')////btn
 const rem_btn = document.querySelectorAll('#rem-btn')////btn
 const button_form = document.getElementById('button_form')
 
-button_form.onclick = (e)=> {
+button_form.addEventListener('click', (e)=>{
     e.preventDefault()
-}
+})
 
 
 
@@ -53,10 +59,8 @@ add.addEventListener('click', ()=> {
             let data = req.responseText
             console.log(data);
             if(data == "sucess"){
-                // }else {
-                    //     ErrorHandler.textContent = data
-                    //     errorText.style.display = 'flex'
-                }
+                location.assign('./dashboard.php')
+            }
         }
     }
     req.open('POST', './php/product.php', true)
@@ -75,6 +79,7 @@ update.addEventListener('click', ()=> {
         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
             let data = req.responseText
             console.log(data)
+
             
         }
     }
@@ -82,6 +87,26 @@ update.addEventListener('click', ()=> {
     let formed_form = new FormData(formed)
     req.send(formed_form)
 })
+
+// for (let i = 0; i < logout.length; i++) {
+//     console.log(logout.length);
+    logout.addEventListener('click', ()=> {
+        const req = new XMLHttpRequest()
+        req.onreadystatechange = ()=> {
+            if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+                let data = req.responseText
+                console.log(data)
+                if(data == 'header'){
+                    location.href = '../index.php'
+                }
+            }
+        }
+        req.open('POST', '../logout.php', true)
+        // let formed_formed = new FormData(button_form)
+        req.send()
+    })
+    
+// }
 
 
 for (let i = 0; i < rem_btn.length; i++) {
@@ -92,14 +117,15 @@ for (let i = 0; i < rem_btn.length; i++) {
                 let data = req.responseText
                 console.log(data)
                 if(data == 'good'){
-                    location.assign('./dashboard.php')
+                    // location.assign('./dashboard.php')
                 }
             }
         }
         req.open('POST', './php/rm.php', true)
-        let formed_form = new FormData(button_form)
-        req.send(formed_form)
+        let formed_formed = new FormData(button_form)
+        req.send(formed_formed)
     })
     
     
 }
+

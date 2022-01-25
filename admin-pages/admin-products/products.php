@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['email'])){
+        header("location: /index.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,14 +46,19 @@
                             include '../connection.php';
                             $sql = "SELECT * FROM `employee`";
                             $query = mysqli_query($conn, $sql);
-                            $rows = mysqli_fetch_assoc($query);
-        
+
+                            $sql2 = "SELECT * FROM `produc`";
+                            $query2 = mysqli_query($conn, $sql2);
+                            $res = mysqli_fetch_assoc($query2);
+                            // $rows = mysqli_fetch_assoc($query);
+                            if(mysqli_num_rows($query)> 0){
+                                while($results = mysqli_fetch_assoc($query)){
                             ?>
                             <tr>
-                                <td><?php echo $rows['fname']?></td>
-                                <td>Product</td>
-                                <td>id</td>
-                                <td>Date</td>
+                                <td><?php echo $results['fname']?></td>
+                                <td><?php echo $res['product_name']?></td>
+                                <td><?php echo $res['id']?></td>
+                                <td><?php echo $res['addedDate']?></td>
                                 <td>
                                     <div class="action-type">
                                         <i class="fas fa-plus-circle"></i>
@@ -53,7 +67,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                             <td>Jhon</td>
                                 <td>Product</td>
                                 <td>id</td>
@@ -64,9 +78,12 @@
                                         <i class="fas fa-minus-circle"></i>
                                     </div>
                                 </td>
-                            </tr>
-
-                            <tr>
+                            </tr> -->
+                        <?php
+                            }
+                        }
+                        ?>
+                            <!-- <tr>
                             <td>Jhon</td>
                                 <td>Product</td>
                                 <td>id</td>
@@ -152,12 +169,13 @@
                                 </td>
                             </tr>
 
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
         </div>
     
     <script src="./index.js"></script>
     <script src="/app.js"></script>
+    <script src="../js/admin.js"></script>
 </body>
 </html>

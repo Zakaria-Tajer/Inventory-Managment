@@ -1,8 +1,9 @@
 <?php
+
     session_start();
 
-if(!isset($_SESSION['unique_id'])){
-    // header("location: index.php");
+if(!isset($_SESSION['id'])){
+    header("location: /index.php");
 }
 
 ?>
@@ -10,11 +11,14 @@ if(!isset($_SESSION['unique_id'])){
 <body>
     <?php
         include_once './header.php';
-        include '../admin-pages/navbar.php';
+        // include_once './php/prodConn.php';
+        include_once '../admin-pages/navbar.php';
+        
     ?>
+
         <?php
             include "./php/prodConn.php";
-            $sql = "SELECT * FROM `products`";
+            $sql = "SELECT * FROM `produc`";
             $result = $conn->query($sql);
         ?>
 
@@ -60,10 +64,13 @@ if(!isset($_SESSION['unique_id'])){
                         <div class="color"></div>
                     </div>   
                 </div>
+                <?php
+
+                ?>
                 <form class="rm_md" id="button_form">
                     <!-- <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>"> -->
-                    <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button>
-                    <!-- <a href="./php/removeProd.php?delete=<?php echo $row['id'];?>" id="rem" class="button_remove">Remove</a> -->
+                    <!-- <button class="rm"  name="delete" id="rem-btn" type="submit">Remove</button> -->
+                    <a href="./php/rm.php?delete=<?php echo $row['id'];?>" id="rem-btn" class="button_remove">Remove</a>
                     <button class="md" id="modifier_btns">Modifier</button>
                     <!-- <img src="./dashboard.php" alt=""> -->
                </form>
@@ -88,5 +95,6 @@ if(!isset($_SESSION['unique_id'])){
     <script src="./index.js"></script>
     <script src="./js/product.js"></script>
     <script src="./js//removedProducts.js"></script>
+    <script src="https://kit.fontawesome.com/18228bcc89.js" crossorigin="anonymous"></script>
 </body>
 </html>

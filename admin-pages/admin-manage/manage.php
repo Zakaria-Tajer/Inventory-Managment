@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+
+if(!isset($_SESSION['id'])){
+    header("location: /index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +20,15 @@
 <body>
     <?php
         include('../navbar.php');
+        $query = "SELECT * FROM `employee`";
+        $sql = mysqli_query($conn, $query);
+        
     ?>
 
     <div>
         <i class="fas fa-bars" id="menu-bars"></i>
     </div>
+    
     <div class="popupEmployeeAdded" id="popupEmployeeAdded">
         <form class="wrapper" id="warpperForm" enctype="multipart/form-data" action="#">
             <div class="create-text">
@@ -36,6 +49,9 @@
         </form>
     </div>
     <div class="list-container">
+    <div class="add_class">
+        <button style="background-color: #357EBD;" id="addEmployee" class="addEmployee">Add Employee</button>
+        </div>
         <div class="manag-list">
             <h1>List of Actions</h1>
         </div>
@@ -53,8 +69,7 @@
                     </tr>
             <?php
                 include '../connection.php';
-                $query = "SELECT * FROM `employee`";
-                $sql = mysqli_query($conn, $query);
+
                 if(mysqli_num_rows($sql)> 0){
                     while($rows = mysqli_fetch_assoc($sql)){
             ?>
@@ -82,10 +97,11 @@
                         <td>
                             <div class="removeAndAdd">
                                 <div class="add">
-                                    <button style="background-color: #357EBD;" id="addEmployee">Add Employee</button>
+                                    <!-- <button style="background-color: #357EBD;" id="addEmployee">Add Employee</button> -->
                                     <!-- <a style="background-color: #357EBD;" href="./removeEmployee.php?id=<?php echo $rows['id'];?>"id="rem" class="button_remove">Add</a> -->
                                     <!-- <button style="background-color: #D9534F;" id="removeEmployee">Remove Employee</button> -->
                                     <a href="./removeEmployee.php?delete=<?php echo $rows['id'];?>" id="rem" class="button_remove">Remove</a>
+                                    <!-- <a href="/logout.php?id=<?php echo $rows['id'];?>"  class="button_remove">Remove</a> -->
                                 </div>
                             </div>
                         </td>

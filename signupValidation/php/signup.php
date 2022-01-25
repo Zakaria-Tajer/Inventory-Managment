@@ -45,9 +45,10 @@ include_once('./connection.php');
                                 $sql3 = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$Email}'");
                                 if(mysqli_num_rows($sql3)> 0){
                                     $row = mysqli_fetch_assoc($sql);
-                                    $_SESSION['unique_id'] = $row['unique_id'];
-                                    mysqli_query($conn,$sql1);
+                                    $_SESSION['id'] = $row['id'];
                                     echo 'Success';
+                                    mysqli_query($conn,$sql1);
+                                
                                 }
                             }else {
                                 echo 'Somthing Went wrong';

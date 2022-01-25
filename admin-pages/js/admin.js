@@ -6,10 +6,6 @@ const Actual_Name = document.getElementById('Actual_Name')
 window.onload = ()=> {
     let Actname = localStorage.getItem('Name')
     Actual_Name.textContent = Actname
-
-    let rmClicked = localStorage.getItem('clicks');        
-    
-    removedProductsCount.textContent = rmClicked
     
 }
 

@@ -35,6 +35,7 @@ SignUp_btn.addEventListener('click', ()=> {
     req.send(formData)
 })
 
+
 // loadedElement
 const Sign = document.getElementById('SignUps')
 const login_loaded = document.getElementById('login-loaded')

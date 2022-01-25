@@ -13,9 +13,9 @@ const removedProductsCount = document.getElementById('removedProductsCount')
 
 const logout = document.getElementById('logout')
 
-logout.onclick = ()=> {
-    location.assign('../index.php')
-}
+// logout.onclick = ()=> {
+//     location.assign('../index.php')
+// }
 
 const dashboard = document.getElementById('dashboard')
 const products = document.getElementById('products')
