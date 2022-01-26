@@ -7,6 +7,9 @@ const form = document.getElementById('form')
 form.addEventListener('submit', (e)=> {
     e.preventDefault()
 })
+
+
+
 const login_btn = document.getElementById('login-btn')
 const SignUp_btn = document.getElementById('SignUp-btn')
 

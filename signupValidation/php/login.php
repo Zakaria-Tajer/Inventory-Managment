@@ -19,7 +19,7 @@
                 $_SESSION['id'] = $rows['id'];
                 $_SESSION['fname'] = $rows['fname'];
                 $_SESSION['lname'] = $rows['lname'];
-                $_SESSION['img'] = $rows['img'];
+                // $_SESSION['img'] = $rows['img'];
                 echo 'Success';
             }
             // $id = $rows['id'];

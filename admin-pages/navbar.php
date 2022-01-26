@@ -11,7 +11,7 @@ include 'connection.php';
     if(isset($_SESSION['id'])){
         $fname = $_SESSION['fname'];
         // $lname = $_SESSION['lname'];
-        $img = $_SESSION['img'];
+        // $img = $_SESSION['img'];
     }
     
     

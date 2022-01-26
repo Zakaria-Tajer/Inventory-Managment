@@ -145,7 +145,7 @@ body {
     width: 80%;
 }
 
-#formed.active {
+.form.active {
     display: flex;
 } 
 /* CSS */

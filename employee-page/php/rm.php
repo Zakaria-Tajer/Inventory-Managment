@@ -19,7 +19,7 @@
 
     if($result){
         echo 'good';
-        header("location: ./dashboard.php");
+        header("location: ../dashboard.php");
     }else {
         echo 'Failed';
     }

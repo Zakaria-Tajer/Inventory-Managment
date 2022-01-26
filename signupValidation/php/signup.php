@@ -35,7 +35,7 @@ include_once('./connection.php');
 
                         $new_img_name = $time.$img_name;
                         if(move_uploaded_file($img_TmpName, 'UploadedImages/'.$new_img_name)){
-                            $status = "Offline NOw";
+                            $status = "Offline Now";
                             $fname = "zakaria";
                             $random = rand(time(), 10000);
 
@@ -46,7 +46,7 @@ include_once('./connection.php');
                                 mysqli_query($conn,$sql1);
                                 $sql3 = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$Email}'");
                                 if(mysqli_num_rows($sql3)> 0){
-                                    $row = mysqli_fetch_assoc($sql);
+                                    $row = mysqli_fetch_assoc($sql3);
                                     $_SESSION['id'] = $row['id'];
                                     $_SESSION['fname'] = $row['fname'];
                                     $_SESSION['lname'] = $row['lname'];

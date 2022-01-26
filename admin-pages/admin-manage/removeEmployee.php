@@ -7,7 +7,7 @@
     $query = mysqli_query($conn, $sql);
 
     if($query){
-        echo 'Nive';
+        echo 'Nice';
         header("location: ./manage.php");
     }else {
         echo 'not';
