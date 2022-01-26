@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['id'])){
+    if(!isset($_SESSION['unique_id'])){
         header("location: /index.php");
     }
     
@@ -44,24 +44,25 @@
                         <tbody>
                         <?php
                             include '../connection.php';
-                            $sql = "SELECT * FROM `employee`";
-                            $query = mysqli_query($conn, $sql);
+                            // $sql = "SELECT * FROM `produc`";
 
-                            $sql2 = "SELECT * FROM `produc`";
-                            $query2 = mysqli_query($conn, $sql2);
-
+                            $sql3 = "SELECT * FROM `produc` JOIN `employee` on employee.id= produc.emp_id"; 
+                            $query = mysqli_query($conn, $sql3);
                             
-                            $prod = mysqli_fetch_assoc($query2);
-
+                            // $sql2 = "SELECT * FROM `employee`";
+                            // $query2 = mysqli_query($conn, $sql);
+                            
+                            // $emp = mysqli_fetch_assoc($query2);
+// 
                             if(mysqli_num_rows($query)> 0){
                                 while($results = mysqli_fetch_assoc($query)){
                             ?>
 
                             <tr>
                                 <td><?php echo $results['fname']?></td>
-                                <td><?php echo $prod['product_name']?></td>
-                                <td><?php echo $prod['id']?></td>
-                                <td><?php echo $prod['addedDate']?></td>
+                                <td><?php echo $results['product_name']?></td>
+                                <td><?php echo $results['product_unique_id']?></td>
+                                <td><?php echo $results['addedDate']?></td>
                                 <td>
                                     <div class="action-type">
                                         <i class="fas fa-plus-circle"></i>

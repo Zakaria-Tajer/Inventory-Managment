@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['id'])){
+    if(!isset($_SESSION['unique_id'])){
         header("location: /index.php");
     }
 
@@ -56,19 +56,22 @@
                     <i class='bx bx-package'></i>
                     </div>
                 </div>
-                
-                <div class="box">
-                    <h2>Total added Products</h2>
-                <div class="box-content">
-                    <!-- <h2><?php print_r($read1);?></h2> -->
-                    <img src="../img/box.png">
-                </div>
-                </div>
                 <?php 
                     $fileHandle = fopen('../employee-page/php/clicks.txt', 'r+');
                     $read = fread($fileHandle, filesize('../employee-page/php/clicks.txt'));
 
+                    $fileHandle2 = fopen('../employee-page/php/addClicks.txt', 'r+');
+                    $read2 = fread($fileHandle2, filesize('../employee-page/php/addClicks.txt'));
+
                 ?>
+                <div class="box">
+                    <h2>Total added Products</h2>
+                <div class="box-content">
+                    <h2><?php print_r($read2);?></h2>
+                    <img src="../img/box.png">
+                </div>
+                </div>
+                
                 <div class="box">
                     <h2>Total Removes Products</h2>
                 <div class="box-content">
@@ -155,5 +158,6 @@
 
         <script src="./index.js"></script>
         <script src="./js/admin.js"></script>
+        <!-- <script src="../employee-page/js/product.js"></script> -->
 </body>
 </html>

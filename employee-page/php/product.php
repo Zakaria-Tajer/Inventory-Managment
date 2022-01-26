@@ -2,8 +2,16 @@
   
     include_once('./prodConn.php');
 
-
+    session_start();
     // echo '1';
+        // $res = mysqli_fetch_assoc($sql);
+    // $sql = mysqli_query($conn, "SELECT * FROM `employee` ORDER BY `employee`.`id` ASC");
+    // $res = mysqli_fetch_assoc($sql);
+    // while ($row = mysqli_fetch_assoc($sql)){
+        // echo $res['id'];
+    // }
+    $session_id = $_SESSION['id'];
+
     $productName = mysqli_real_escape_string($conn,$_POST['produtName']);
     $productId = mysqli_real_escape_string($conn,$_POST['productId']);
     $productPrice = mysqli_real_escape_string($conn,$_POST['productPrice']);
@@ -29,8 +37,8 @@
                 $id_optional = rand(time(), 10000);
                 $date = date('Y-m-d');
 
-                $sql1 = "INSERT INTO  `produc`(product_name, product_unique_id, product_price, product_img, addedDate) 
-                VALUES('{$productName}','{$id_optional}', '{$productPrice}', '{$new_img_name}', '{$date}')";
+                $sql1 = "INSERT INTO  `produc`(product_name, product_unique_id, product_price, product_img, addedDate, emp_id) 
+                VALUES('{$productName}','{$id_optional}', '{$productPrice}', '{$new_img_name}', '{$date}', '{$session_id}')";
                 if($sql1){
                     mysqli_query($conn, $sql1);
                     echo 'sucess';

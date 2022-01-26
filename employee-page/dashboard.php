@@ -28,7 +28,7 @@ if(!isset($_SESSION['id'])){
             <div class="ic">
                 <i class="fas fa-times" id="close"></i>
             </div>
-            <form class="adding" id="from_added" action="#">
+            <form class="adding" id="from_added">
                 <input type="text" id="product_name" name="produtName" placeholder="Product_Name..">
                 <input type="text" name="productId" placeholder="Prodcut_id..">
                 <input type="text" name="productPrice" placeholder="Product_Price..">
@@ -59,10 +59,10 @@ if(!isset($_SESSION['id'])){
                     <h1>Price: <?php echo $row['product_price'];?> Dh</h1>
                     <h1>Product Color:</h1>
                     <div class="color_container">
+                        <!-- <div class="color"></div>
                         <div class="color"></div>
                         <div class="color"></div>
-                        <div class="color"></div>
-                        <div class="color"></div>
+                        <div class="color"></div> -->
                     </div>   
                 </div>
 

@@ -19,7 +19,7 @@
                 $_SESSION['id'] = $rows['id'];
                 $_SESSION['fname'] = $rows['fname'];
                 $_SESSION['lname'] = $rows['lname'];
-                // $_SESSION['img'] = $rows['img'];
+                $_SESSION['img'] = $rows['img'];
                 echo 'Success';
             }
             // $id = $rows['id'];
@@ -31,11 +31,16 @@
         }
         $sqlOther = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$email}' AND passwordVerify = '{$pass}'");
         if(mysqli_num_rows($sqlOther)> 0){
-            $ad = mysqli_fetch_assoc($sqlOther);
-            $_SESSION['id'] = $ad['id'];
-            $_SESSION['fname'] = $ad['fname'];
-            // $_SESSION['lname'] = $ad['lname'];
-            $_SESSION['img'] = $ad['img'];
+            $admin = mysqli_fetch_assoc($sqlOther);
+
+            $statusAdmin = "Active Now";
+            $sql4 = mysqli_query($conn,"UPDATE `user-registers` set status = '{$statusAdmin}' WHERE id = '{$admin['id']}'");
+            if($sql4){
+                $_SESSION['unique_id'] = $admin['unique_id'];
+                $_SESSION['fname'] = $admin['fname'];
+                // $_SESSION['lname'] = $ad['lname'];
+                $_SESSION['img'] = $admin['img'];
+            }
             echo 'admin';
         }else {
             // echo 'incorrect Email or password';

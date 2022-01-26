@@ -8,18 +8,14 @@ const logout = document.getElementById('logout')
 // const logout_form = document.getElementById('logout_form')
 
 
-logout_form.addEventListener('click', (e)=>{
-    e.preventDefault()
-})
-
 const closeIcon = document.getElementById('close')
 const update = document.getElementById('update')////btn
 // const rem_btn = document.querySelectorAll('#rem-btn')////btn
 const button_form = document.getElementById('button_form')
 
-button_form.addEventListener('submit', (e)=>{
-    e.preventDefault()
-})
+// button_form.addEventListener('submit', (e)=>{
+//     e.preventDefault()
+// })
 
 
 
@@ -36,12 +32,14 @@ for (let i = 0; i < md.length; i++) {
        formed[i].classList.toggle('active')
        container_all[i].classList.toggle('active')
    })
+   formed[i].addEventListener('click', (e)=> {
+       e.preventDefault()
+   })
    
 }
-// formed.addEventListener('click', (e)=> {
+// form.addEventListener('submit', (e)=> {
 //     e.preventDefault()
 // })
-
 
 
 closeIcon.addEventListener('click', ()=> {
@@ -92,21 +90,21 @@ update.addEventListener('click', ()=> {
 
 // for (let i = 0; i < logout.length; i++) {
 //     console.log(logout.length);
-    logout.addEventListener('click', ()=> {
-        const req = new XMLHttpRequest()
-        req.onreadystatechange = ()=> {
-            if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-                let data = req.responseText
-                console.log(data)
-                if(data == 'header'){
-                    location.href = '../index.php'
-                }
+logout.addEventListener('click', ()=> {
+    const req = new XMLHttpRequest()
+    req.onreadystatechange = ()=> {
+        if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+            let data = req.responseText
+            console.log(data)
+            if(data == 'header'){
+                location.href = '../index.php'
             }
         }
-        req.open('POST', '../logout.php', true)
-        // let formed_formed = new FormData(button_form)
-        req.send()
-    })
+    }
+    req.open('POST', '../logout.php', true)
+    // let formed_formed = new FormData(button_form)
+    req.send()
+})
     
 // }
 
