@@ -1,19 +1,23 @@
 <?php
 
 include 'connection.php';
-    // session_start();
-    // $sql = "SELECT * FROM `employee`";
-    // $query = mysqli_query($conn,$sql);   
-    // // $result = mysqli_fetch_all($query);
-    // $result = mysqli_fetch_assoc($query);
-    // // while($row_users = mysqli_fetch_assoc($query));
-    // // while($names = mysqli_fetch_assoc($query));
+//    session_start();
     if(isset($_SESSION['id'])){
-        $fname = $_SESSION['fname'];
         // $lname = $_SESSION['lname'];
-        // $img = $_SESSION['img'];
     }
     
+    
+    
+    // $img = $_SESSION['img'];
+    // echo $img;
+    $fname = $_SESSION['fname'];
+
+    $sql = "SELECT * FROM `produc` JOIN `employee` on employee.id= produc.emp_id";
+    $query = mysqli_query($conn, $sql);
+
+    $row = mysqli_fetch_assoc($query);
+
+    // $img = $row['img'];
     
 ?>
 
@@ -32,17 +36,14 @@ include 'connection.php';
             <!-- ../signupValidation/php/UploadedImages/ -->
             <div class="user-admin">
                 <div class="user-circle">
-                <img src="<?php echo "../signupValidation/php/UploadedImages/". $img?>">
+                <img src="<?php echo "../admin-pages/admin-manage/employePics/".$row['img']?>">
+                
                 </div>
                 <div class="info">
                     <h1 id="Actual_Name"><?php echo $fname?></h1>
                     <h3>Admin</h3>
                 </div>
-                <i class="fas fa-edit" id="edit_name"></i>
-                <div class="edit" id="popup_edit">
-                    <input type="text" placeholder="Enter Your Name" class="changeName" id="name">
-                    <button id="changeNameBtn">Change</button>
-                </div>
+
             </div>
             </div>
         </nav>

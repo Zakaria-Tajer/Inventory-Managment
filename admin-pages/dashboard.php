@@ -28,7 +28,7 @@
                 $query = mysqli_query($conn, "SELECT * FROM `employee`");
                 $row = mysqli_num_rows($query);
                 
-                $query1 = mysqli_query($conn, "SELECT * FROM `products`");
+                $query1 = mysqli_query($conn, "SELECT * FROM `produc`");
                 $productRows = mysqli_num_rows($query1);
                 $products = mysqli_fetch_assoc($query1);
 
@@ -112,8 +112,9 @@
                                 <td><?php echo $names['joinedDate']?></td>
                                 <td>
                                     <div class="action-type">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <i class="fas fa-minus-circle"></i>
+
+                                        <i class="fas fa-plus-circle" id="addCircle"></i>
+                                        <i class="fas fa-minus-circle" id="minusCircle"></i>
                                     </div>
                                 </td>
                             </tr>

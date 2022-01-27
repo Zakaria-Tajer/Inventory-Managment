@@ -1,5 +1,5 @@
 <?php
-   
+    session_start();
     include('../connection.php');
     
     $fname = mysqli_real_escape_string($conn, $_POST['Fname']);

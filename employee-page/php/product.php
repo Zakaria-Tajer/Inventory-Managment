@@ -36,12 +36,18 @@
                     
                 $id_optional = rand(time(), 10000);
                 $date = date('Y-m-d');
+                
 
                 $sql1 = "INSERT INTO  `produc`(product_name, product_unique_id, product_price, product_img, addedDate, emp_id) 
                 VALUES('{$productName}','{$id_optional}', '{$productPrice}', '{$new_img_name}', '{$date}', '{$session_id}')";
                 if($sql1){
                     mysqli_query($conn, $sql1);
                     echo 'sucess';
+                    if(!is_file('addClicks.txt')){
+                        file_put_contents('addClicks.txt', 0);
+                    }
+                    $count = file_get_contents('addClicks.txt');
+                    file_put_contents('addClicks.txt', ++$count);
                     // echo 'Inserted';
                     // header("location: ../dashboard.php");
                 }else {

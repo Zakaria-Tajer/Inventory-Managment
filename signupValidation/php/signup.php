@@ -48,6 +48,7 @@ include_once('./connection.php');
                                 if(mysqli_num_rows($sql3)> 0){
                                     $row = mysqli_fetch_assoc($sql);
                                     $_SESSION['id'] = $row['id'];
+                                    $_SESSION['img'] = $row['img'];
                                     $_SESSION['fname'] = $row['fname'];
                                     $_SESSION['lname'] = $row['lname'];
                                     echo 'Success';
@@ -67,23 +68,6 @@ include_once('./connection.php');
                 }
                 if($Password_ver !== $Password_mat){
                     echo ' NotMatching';
-                // }else {
-                //     // $sql1 = "INSERT INTO `user-registers`(unique_id, email, passwordVerify, passwordMatch, img, status) 
-                //     // VALUES('{$random}','{$Email}', '{$Password_ver}', '{$Password_mat}','{$new_img_name}','${status}')";
-                //     // if($sql1) {
-                //         // $sql3 = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$Email}'");
-                //         // if(mysqli_num_rows($sql3) > 0){
-                //         //     $row = mysqli_fetch_assoc($sql3);
-                //         //     $_SESSION['unique_id'] = $row['unique_id'];
-                //             // $result = mysqli_query($conn, $sql1);
-                //             // echo 'Success';
-                //         // }
-                        
-                //     }else {
-                //         echo 'Somthing Went wrong';
-                //     }
-                    
-        
                 }
     
             }

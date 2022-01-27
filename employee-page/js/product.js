@@ -21,6 +21,7 @@ const button_form = document.getElementById('button_form')
 
 const md = document.querySelectorAll('#modifier_btns')
 const formed = document.querySelectorAll('#formed')
+const Newformed = document.getElementById('formed')
 console.log(formed);
 const container_all = document.querySelectorAll('#container_all')
 console.log(container_all);
@@ -37,9 +38,9 @@ for (let i = 0; i < md.length; i++) {
    })
    
 }
-// form.addEventListener('submit', (e)=> {
-//     e.preventDefault()
-// })
+form.addEventListener('submit', (e)=> {
+    e.preventDefault()
+})
 
 
 closeIcon.addEventListener('click', ()=> {
@@ -79,12 +80,14 @@ update.addEventListener('click', ()=> {
         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
             let data = req.responseText
             console.log(data)
-
+            if(data == 'Updated'){
+                location.assign('./dashboard.php')
+            }
             
         }
     }
     req.open('POST', './php/update.php', true)
-    let formed_form = new FormData(formed)
+    let formed_form = new FormData(Newformed)
     req.send(formed_form)
 })
 

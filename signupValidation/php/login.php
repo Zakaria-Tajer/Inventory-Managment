@@ -40,8 +40,8 @@
                 $_SESSION['fname'] = $admin['fname'];
                 // $_SESSION['lname'] = $ad['lname'];
                 $_SESSION['img'] = $admin['img'];
+                echo 'admin';
             }
-            echo 'admin';
         }else {
             // echo 'incorrect Email or password';
         }

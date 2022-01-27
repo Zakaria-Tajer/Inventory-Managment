@@ -93,7 +93,7 @@ if(!isset($_SESSION['id'])){
     </div>
     <script src="./index.js"></script>
     <script src="./js//removedProducts.js"></script>
+    <script src="./js/product.js"></script>
     <script src="https://kit.fontawesome.com/18228bcc89.js" crossorigin="anonymous"></script>
 </body>
-<script src="./js/product.js"></script>
 </html>

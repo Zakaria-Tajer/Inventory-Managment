@@ -1,11 +1,12 @@
 <?php
 
     include './prodConn.php';
-
+    session_start();
     $query = mysqli_query($conn,"SELECT * FROM produc");
     $row = mysqli_fetch_array($query);
 
     $id = $row['id'];
+    // $id = $_SESSION['id'];
     $UpdateName  = mysqli_real_escape_string($conn, $_POST['UpdateName']);
     $UpdateId  = mysqli_real_escape_string($conn, $_POST['UpdateId']);
     $UpdatePrice  = mysqli_real_escape_string($conn, $_POST['UpdatePrice']);

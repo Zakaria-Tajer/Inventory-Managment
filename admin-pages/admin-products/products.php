@@ -54,8 +54,9 @@
                             
                             // $emp = mysqli_fetch_assoc($query2);
 // 
-                            if(mysqli_num_rows($query)> 0){
-                                while($results = mysqli_fetch_assoc($query)){
+                        if(mysqli_num_rows($query)> 0){
+                            while($results = mysqli_fetch_assoc($query)){
+                                
                             ?>
 
                             <tr>

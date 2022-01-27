@@ -17,12 +17,28 @@ const addFromAdmin = document.getElementById('addFromAdmin')
 const warpperForm = document.getElementById('warpperForm')
 const errorDisplayer = document.getElementById('errorDisplayer')
 const textError = document.getElementById('textError')
-// let session_on = document.querySelectorAll('#session')
-// let session_oof = document.querySelectorAll('#session_off')
+
+
+
+let Status = document.querySelectorAll('#status')
+let status_container = document.querySelectorAll('#status_container')
+
+for (let i = 0; i < Status.length; i++) {
+    if(Status[i].innerHTML == "Offline now"){
+        status_container[i].style.backgroundColor = '#F8D7DB'
+    }else {
+        status_container[i].style.backgroundColor = ''
+    }
+}
+
+
+
+
 
 warpperForm.addEventListener('submit', (e)=> {
     e.preventDefault()
 })
+
 
 for (let i = 0; i < addEmployee.length; i++) {
     addEmployee[i].addEventListener('click', ()=> {

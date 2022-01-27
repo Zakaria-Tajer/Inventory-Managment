@@ -84,8 +84,8 @@ if(!isset($_SESSION['unique_id'])){
                         <td><?php echo $rows['joinedDate']?></td>
                         <td>
                         <div class="action-type" id="">
-                            <div class="session-active" id="session_active">
-                                <h4 id=""><?php echo $rows['status']?></h4>
+                            <div class="session-active" id="status_container">
+                                <h4 id="status"><?php echo $rows['status']?></h4>
                             </div>
                         
                             <!-- <i class="fas fa-plus-circle"></i> -->

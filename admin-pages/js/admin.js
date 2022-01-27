@@ -3,8 +3,9 @@ const changeNameBtn = document.getElementById('changeNameBtn')
 const ChangeName = document.getElementById('name')
 const Actual_Name = document.getElementById('Actual_Name')
 
-const logout = document.getElementById('logout')
-logout.addEventListener('click', ()=> {
+const logouts = document.getElementById('logout')
+
+logouts.addEventListener('click', ()=> {
     const req = new XMLHttpRequest()
     req.onreadystatechange = ()=> {
         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
