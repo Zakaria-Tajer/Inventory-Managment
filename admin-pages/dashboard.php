@@ -20,9 +20,8 @@
         <?php
             include 'navbar.php';
             ?>
-            <div>
-                <i class="fas fa-bars" id="menu-bars"></i>
-            </div>
+           
+
             <?php
                 include './connection.php';
                 $query = mysqli_query($conn, "SELECT * FROM `employee`");
@@ -39,6 +38,9 @@
                 
             ?>
         <section class="content">
+            <div class="iconss">
+                <i class="fas fa-bars" id="menu-bars"></i>
+            </div>
             <h1 class="dash-board">Dashboard</h1>
             <div class="boxs-container">
                 <div class="box">

@@ -459,7 +459,9 @@ thead th {
 #Not_hide {
     display: none;
 }
-
+#menu-bars {
+    display: none;
+}
 
 
 
@@ -536,14 +538,14 @@ thead th {
     }
     .dash-board {
         position: absolute;
-        top: -10%;
+        top: -2%;
     }
     .boxs-container {
         width: 400px;
         display: block;
         position: relative;
         right: 7%;
-        top: 20px;
+        top: 3em;
     }
     .box h2{
         top: 10px;
@@ -552,7 +554,7 @@ thead th {
     .table-container {
         display:block;
         position: relative;
-        top: 130%;
+        top: 100%;
         /* width: 500px; */
         /* overflow-x: hidden; */
         left: -30%;
@@ -601,13 +603,24 @@ thead th {
         width: 480px;
         overflow-x: scroll;
     }
+    #menu-bars {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        margin-left:15%;
+        width: 20px;
+    }
+    .dash-board {
+        width: 100%;
+        /* background-color: yellow; */
+    }
    
     
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     .hero {
-        height: 310vh;
+        height: 210vh;
         /* width: 100%; */
     }
     #edit_name {
@@ -645,7 +658,7 @@ thead th {
     }
     .dash-board {
         position: absolute;
-        top: -10%;
+        top: -3%;
     }
     .sidebar {
         left: -100%;
@@ -677,7 +690,7 @@ thead th {
         position: relative;
     }
     .table-container {
-        top: 130%;
+        top: 100%;
         position: absolute;
         left: -20%;
     }
@@ -693,7 +706,7 @@ thead th {
     }
     .employee-content {
         position: relative;
-        margin-top: 170%;
+        margin-top: 130%;
         margin-right: auto;
     }
     .title-employee {
@@ -714,6 +727,62 @@ thead th {
         display: flex;
         align-items: center;
     }
+    #menu-bars {
+        display: flex;
+        /* position: absolute; */
+        /* margin-left: 3em; */
+    }
+    .iconss i {
+        width: 20px;
+    }
 
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px){
+    .box {
+        width: 300px;
+    }
+    .iconss {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar {
+        left: -100%;
+        transition: 1s ease-out;
+        z-index: 1;
+    }
+    .sidebar.active {
+        left: 0;
+        z-index: 1;
+        transition: 1s ease-in;
+    }
+    .dash-board {
+        width: 500px;
+    }
+    #menu-bars {
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        font-size: 25px;
+    } 
+    .boxs-container {
+        transform: translateX(-15%);
+        width: 100%;
+    }
+    .table-content {
+        transform: translateX(-33%);
+    }
+    .employee-list {
+        /* margin-left: 0; */
+        transform: translateX(-33%);
+    }
+    .title-employee {
+        width: 300px;
+        transform: translateX(-55%);
+    }
+    #menu-bars {
+        display: flex;
+    }
 
 }

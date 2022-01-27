@@ -9,6 +9,7 @@ if(!isset($_SESSION['id'])){
 ?>
 
 <body>
+    <!-- <div class="heros"> -->
     <?php
         include_once './header.php';
         // include_once './php/prodConn.php';
@@ -16,12 +17,14 @@ if(!isset($_SESSION['id'])){
         
     ?>
 
+    <!-- </div> -->
+
         <?php
             include "./php/prodConn.php";
             
         ?>
-
-            <i class="fas fa-bars" id="menu-bars"></i>
+        <!-- <div class="">
+            <i class="fas fa-bars" id="menu-bars"></i> -->
         </div>
         <button class="button-29" role="button" id="add_products">Add Product</button>
         <div class="showed_up" id="showed_up">
@@ -38,10 +41,11 @@ if(!isset($_SESSION['id'])){
             </form>
         </div>
         <div class="text-p">
+            <i class="fas fa-bars" id="menu-bars"></i>
             <h1>Product Management</h1>
         </div>
         <div class="containers" id="containers">
-           <?php
+        <?php
            $sql = "SELECT * FROM `produc`";
            $result = $conn->query($sql);
            if($result->num_rows > 0){
@@ -52,12 +56,11 @@ if(!isset($_SESSION['id'])){
                 <div class="img_uploaded">
                     <img src="<?php echo "./php/uploaded_phones/". $row['product_img']?>">
                 </div>
-                <div class="info">
+                <div class="info_pro">
                     <!-- <h1></h1> -->
-                    <h1>Name:<?php echo $row['product_name'];?></h1>
+                    <h1>Name: <?php echo $row['product_name'];?></h1>
                     <h3>Id: <?php echo $row['product_unique_id'];?></h3>
                     <h1>Price: <?php echo $row['product_price'];?> Dh</h1>
-                    <h1>Product Color:</h1>
                     <div class="color_container">
                         <!-- <div class="color"></div>
                         <div class="color"></div>
