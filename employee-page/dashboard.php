@@ -23,6 +23,7 @@ if(!isset($_SESSION['id'])){
             include "./php/prodConn.php";
             
         ?>
+        
         <!-- <div class="">
             <i class="fas fa-bars" id="menu-bars"></i> -->
         </div>
@@ -46,6 +47,7 @@ if(!isset($_SESSION['id'])){
         </div>
         <div class="containers" id="containers">
         <?php
+        
            $sql = "SELECT * FROM `produc`";
            $result = $conn->query($sql);
            if($result->num_rows > 0){
@@ -88,14 +90,44 @@ if(!isset($_SESSION['id'])){
            }
            ?>
         </div>
+
+        <?php
+        $sql = "SELECT * FROM `msg`";
+
+        $query = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($query);
+    
+        $msgSender = $row['sending_msg_id'];
+            $sql3 = "SELECT * FROM `userregisters` WHERE unique_id = '{$msgSender}'";
+
+            $query3 = mysqli_query($conn, $sql3);
+            $res = mysqli_fetch_assoc($query3);
+        
+
+        ?>
+        <div class="popup" id="popup">
+            <div class="adminMsg">
+                <div class="img_container">
+                    <img src="" alt="">
+                </div>
+               
+                <div class="name" id="names">
+                    <h1 id="adminNames"><?php echo $res['fname']?></h1>
+                </div>
+            </div>
+            <div id="pushedmsg">
+            <div class="msgContainer" id="msgContainer">
+
+            </div>
+            </div>
+        </div>
         
             
-       
+      
 
 
     </div>
     <script src="./index.js"></script>
-    <script src="./js//removedProducts.js"></script>
     <script src="./js/product.js"></script>
     <script src="https://kit.fontawesome.com/18228bcc89.js" crossorigin="anonymous"></script>
 </body>

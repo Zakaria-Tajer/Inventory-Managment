@@ -6,6 +6,7 @@
     $message = $_POST['message'];
     $id = $_SESSION['unique_id'];
     
+
     $emp = $_COOKIE['profileid'];
 
 

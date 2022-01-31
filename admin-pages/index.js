@@ -1,9 +1,23 @@
 const menu = document.getElementById('menu-bars')
 const sidebar_showed = document.getElementById('sidebar-showed')
+// const messages_hide_admin = document.getElementById('messages_hide_admin')
+const bell = document.getElementById('bell')
+const user = document.getElementById('user')
+
+messages_hide_admin.style.display = 'none'
+bell.style.display = 'none'
+
 
 menu.addEventListener('click', ()=> {
     sidebar_showed.classList.toggle('active')
 })
+
+
+
+
+
+
+
 
 
 // const removedProductsCount = document.getElementById('removedProductsCount')

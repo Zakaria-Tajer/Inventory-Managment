@@ -5,7 +5,10 @@ const showed_up = document.getElementById('showed_up')
 const product_name = document.getElementById('product_name')
 const con = document.getElementById('containers')
 const logout = document.getElementById('logout')
+const messages_hide_emp = document.getElementById('messages_hide_emp')
 // const logout_form = document.getElementById('logout_form')
+
+messages_hide_emp.style.display = 'none'
 
 
 const closeIcon = document.getElementById('close')

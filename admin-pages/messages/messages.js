@@ -12,6 +12,8 @@ const loaded = document.getElementById('onload')
 const username = document.getElementById('username')
 
 
+
+
 for (let i = 0; i < hoverEffect.length; i++) {
     hoverEffect[i].onmouseover = ()=> {
         console.log(2);

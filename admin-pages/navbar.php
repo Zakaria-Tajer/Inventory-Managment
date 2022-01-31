@@ -34,7 +34,7 @@ include 'connection.php';
             </div>
            
             <!-- ../signupValidation/php/UploadedImages/ -->
-            <div class="user-admin">
+            <div class="user-admin" id="user">
                 <div class="user-circle">
                 <img src="<?php echo "../admin-pages/admin-manage/employePics/".$row['img']?>">
                 
@@ -43,6 +43,7 @@ include 'connection.php';
                     <h1 id="Actual_Name"><?php echo $fname?></h1>
                     <h3>Admin</h3>
                 </div>
+                <i class="fas fa-bell" id="bell"></i>
 
             </div>
             </div>
@@ -57,9 +58,13 @@ include 'connection.php';
                     <i class="fas fa-cubes"></i>
                     <a href="./admin-products/products.php" id="products">Products</a>
                 </li>
-                <li>
+                <li class="messages_hide_emp" id="messages_hide_emp">
                     <i class="fas fa-envelope"></i>
                     <a href="../admin-pages/messages/message.php" id="messages">Messages</a>
+                </li>
+                <li id="messages_hide_admin">
+                    <i class="fas fa-envelope" ></i>
+                    <button class="buttonM" id="popupBtn">Messages</button>
                 </li>
                 <li id="hide">
                     <i class="fas fa-users-cog"></i>

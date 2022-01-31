@@ -21,9 +21,9 @@
                 </div> 
             ';
 
+            echo $output;
         }
 
-        echo $output;
     }
 
 

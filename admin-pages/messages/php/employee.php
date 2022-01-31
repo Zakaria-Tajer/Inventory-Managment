@@ -3,7 +3,7 @@
     session_start();
     include 'EmpConn.php';
     
-    $id = $_SESSION['id'];
+    // $id = $_SESSION['id'];
     
     // // $sql = 
 

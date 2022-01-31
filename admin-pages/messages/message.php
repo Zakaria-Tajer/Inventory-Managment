@@ -24,8 +24,8 @@
         <nav class="side_bar">
             <ul>
                 <li>
-                <i class='bx bx-grid-alt' id="hoverEffect"></i>
-                    <a href="" id="nav-elements" class="links">Dashboard</a>
+                <i class='bx bx-grid-alt' id="hoverEffect" class="dashboard"></i>
+                    <a href="../dashboard.php" id="nav-elements" class="links">Dashboard</a>
                 </li>
                 <li>
                     <i class="fas fa-cubes"  id="hoverEffect"></i>
@@ -118,6 +118,7 @@
     </main>
     <script src="./messages.js"></script>
     <script src="./chat.js"></script>
+    <!-- <script src="../index.js"></script> -->
     <script src="https://kit.fontawesome.com/18228bcc89.js" crossorigin="anonymous"></script>
 </body>
 </html>
