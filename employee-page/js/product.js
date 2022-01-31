@@ -9,7 +9,7 @@ const logout = document.getElementById('logout')
 
 
 const closeIcon = document.getElementById('close')
-const update = document.getElementById('update')////btn
+const update = document.querySelectorAll('#update')////btn
 // const rem_btn = document.querySelectorAll('#rem-btn')////btn
 const button_form = document.getElementById('button_form')
 
@@ -73,23 +73,26 @@ add.addEventListener('click', ()=> {
 
     
 
-
-update.addEventListener('click', ()=> {
-    const req = new XMLHttpRequest()
-    req.onreadystatechange = ()=> {
-        if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-            let data = req.responseText
-            console.log(data)
-            if(data == 'Updated'){
-                location.assign('./dashboard.php')
+for (let i = 0; i < update.length; i++) {
+    update[i].addEventListener('click', ()=> {
+        const req = new XMLHttpRequest()
+        req.onreadystatechange = ()=> {
+            if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+                let data = req.responseText
+                console.log(data)
+                if(data == 'Updated'){
+                    location.assign('./dashboard.php')
+                }
+                
             }
-            
         }
-    }
-    req.open('POST', './php/update.php', true)
-    let formed_form = new FormData(Newformed)
-    req.send(formed_form)
-})
+        req.open('POST', './php/update.php', true)
+        let formed_form = new FormData(Newformed)
+        req.send(formed_form)
+    })
+    
+    
+}
 
 // for (let i = 0; i < logout.length; i++) {
 //     console.log(logout.length);

@@ -41,3 +41,27 @@
                 <?php }
            }
            ?>
+
+
+
+           <div class="status">
+                <div class="circle-status"></div>
+                <h3>Active</h3>
+            </div>
+
+
+            <!-- reciver -->
+            <!-- <div class="senter-message"></div> -->
+            <div class="reciver-message"></div>
+            <!-- reciver -->
+            <!-- <div class="senter-message"></div> -->
+            <div class="reciver-message"></div>
+            <!-- reciver -->
+            <!-- <div class="senter-message"></div> -->
+            <div class="reciver-message"></div>
+            <!-- reciver -->
+            <!-- <div class="senter-message"></div> -->
+            <div class="reciver-message"></div>
+            <!-- reciver -->
+            <!-- <div class="senter-message"></div> -->
+            <div class="reciver-message"></div>

@@ -33,7 +33,7 @@
                         $new_img_name = $time.$img_name;
                         if(move_uploaded_file($img_TmpName, 'employePics/'.$new_img_name)){
                             $date = date('Y-m-d');
-                            $status = "Active";
+                            $status = "Offline Now";
                             if($password !== $passwordVerification){
                                 echo 'Passwords are Not Matching';
                             }else {

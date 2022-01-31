@@ -14,7 +14,7 @@ include_once('./connection.php');
     if(!empty($Email) && !empty($Password_ver) && !empty($Password_mat)){
 
         if(filter_var($Email, FILTER_VALIDATE_EMAIL)){
-            $sql = mysqli_query($conn,"SELECT email FROM `user-registers` WHERE email = '{$Email}'");
+            $sql = mysqli_query($conn,"SELECT email FROM `userregisters` WHERE email = '{$Email}'");
             if(mysqli_num_rows($sql) > 0){
                 echo "$Email- This email already exist!";
             }else {
@@ -39,12 +39,12 @@ include_once('./connection.php');
                             $fname = "zakaria";
                             $random = rand(time(), 10000);
 
-                            $sql1 = "INSERT INTO `user-registers`(unique_id, email, passwordVerify, passwordMatch, img, status,fname) 
+                            $sql1 = "INSERT INTO `userregisters`(unique_id, email, passwordVerify, passwordMatch, img, status,fname) 
                             VALUES('{$random}','{$Email}', '{$Password_ver}', '{$Password_mat}','{$new_img_name}','${status}','{$fname}')";
                             
                             if($sql1){
                                 mysqli_query($conn,$sql1);
-                                $sql3 = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$Email}'");
+                                $sql3 = mysqli_query($conn, "SELECT * FROM `userregisters` WHERE email = '{$Email}'");
                                 if(mysqli_num_rows($sql3)> 0){
                                     $row = mysqli_fetch_assoc($sql);
                                     $_SESSION['id'] = $row['id'];

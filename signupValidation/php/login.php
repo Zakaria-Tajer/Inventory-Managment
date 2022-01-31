@@ -29,12 +29,12 @@
         }else {
             // echo 'incorrect Email or password';    
         }
-        $sqlOther = mysqli_query($conn, "SELECT * FROM `user-registers` WHERE email = '{$email}' AND passwordVerify = '{$pass}'");
+        $sqlOther = mysqli_query($conn, "SELECT * FROM `userregisters` WHERE email = '{$email}' AND passwordVerify = '{$pass}'");
         if(mysqli_num_rows($sqlOther)> 0){
             $admin = mysqli_fetch_assoc($sqlOther);
 
             $statusAdmin = "Active Now";
-            $sql4 = mysqli_query($conn,"UPDATE `user-registers` set status = '{$statusAdmin}' WHERE id = '{$admin['id']}'");
+            $sql4 = mysqli_query($conn,"UPDATE `userregisters` set status = '{$statusAdmin}' WHERE id = '{$admin['id']}'");
             if($sql4){
                 $_SESSION['unique_id'] = $admin['unique_id'];
                 $_SESSION['fname'] = $admin['fname'];
